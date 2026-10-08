@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import {createCipheriv} from 'node:crypto';
 import {decodePlayerPayload} from '../czzy_open.js';
+import {__jsEvalReturn as dm84} from '../dm84_open.js';
 import {__jsEvalReturn as appget} from '../appget_open.js';
 import {__jsEvalReturn as czzy} from '../czzy_open.js';
 import {aesEncrypt,aesDecrypt,encodeEpisode,decodeEpisode} from '../lib/cat.js';
@@ -29,4 +30,17 @@ test('厂长 AES player accepts its page IV and rejects corrupt ciphertext',()=>
  assert.equal(decodePlayerPayload(`var player = "${payload}"; var rand = "${iv}";`),'https://media.example/a.m3u8');
  assert.throws(()=>decodePlayerPayload(`var player = "AAAA"; var rand = "${iv}";`),/解密失败/);
  assert.equal(decodePlayerPayload('<html></html>'),'');
+});
+test('AppGet discovers its host once and fills an empty home with category results',async()=>{
+ let discoveries=0;
+ await fixture((req,res)=>{if(req.url==='/address'){discoveries++;res.end('http://'+req.headers.host+'\n');return;}const data=req.url.endsWith('initV119')?{type_list:[{type_id:1,type_name:'电影'}]}:{recommend_list:[{vod_id:1,vod_name:'影片'}]};res.end(JSON.stringify({data:aesEncrypt(JSON.stringify(data),key)}));},async host=>{const a=appget();await a.init({ext:{discoveryUrl:host+'/address',key}});const homes=await Promise.all([a.home(),a.home()]);assert.equal(JSON.parse(homes[0]).list[0].vod_id,'1');assert.equal(discoveries,1);});
+});
+test('动漫巴士 carries fresh player parameters through the parser and preserves rewrite URL',async()=>{
+ await fixture(async(req,res)=>{let raw='';for await(const c of req)raw+=c;
+  if(req.url==='/api/parse'){const body=JSON.parse(raw);assert.deepEqual(body,{url:'encrypted',t:123,key:'page-key',client_fallback:false});res.end(JSON.stringify({code:200,url:'https://media.example/a.m3u8',ext:'hls_rewrite'}));return;}
+  if(req.url==='/iframe'){res.end('<script>window.__HHJX_BOOTSTRAP__={"url":"encrypted","t":123,"key":"page-key","ts_key":"ts-key"};</script>');return;}
+  if(req.url.startsWith('/p/')){res.end('<iframe src="/iframe"></iframe>');return;}
+  if(req.url.startsWith('/v/')){res.end('<h1>动漫</h1><ul class="play_from"><li>线路1</li></ul><ul class="play_list"><li><a href="/p/7-1-1.html">1</a></li></ul>');return;}
+  res.end('<a href="/list-1.html">国漫</a><li><a class="cover" href="/v/7.html" data-bg="https://img.example/a.jpg"></a><a class="title" href="/v/7.html">动漫</a><span class="desc">更新</span></li>');
+ },async host=>{const a=dm84();await a.init({ext:{host}});assert.equal(JSON.parse(await a.home()).class.length,1);assert.equal(JSON.parse(await a.category('1')).list[0].vod_pic,'https://img.example/a.jpg');assert.equal(JSON.parse(await a.search('动漫')).list.length,1);const d=JSON.parse(await a.detail('7')).list[0],id=d.vod_play_url.split('$')[1],p=JSON.parse(await a.play('',id)),url=new URL(p.url);assert.equal(url.pathname,'/getts');assert.equal(url.searchParams.get('key'),'ts-key');assert.equal(url.searchParams.get('url'),'https://media.example/a.m3u8');await assert.rejects(()=>a.play('',encodeEpisode({path:'https://elsewhere.example/x'})),/无效/);});
 });

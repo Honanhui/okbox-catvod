@@ -2,7 +2,8 @@ import http from 'node:http';
 import config from './config_open.json' with {type:'json'};
 import {__jsEvalReturn as czzy} from './czzy_open.js';
 import {__jsEvalReturn as appget} from './appget_open.js';
-const factories={'czzy_open.js':czzy,'appget_open.js':appget};
+import {__jsEvalReturn as dm84} from './dm84_open.js';
+const factories={'czzy_open.js':czzy,'appget_open.js':appget,'dm84_open.js':dm84};
 export async function createApp(){
  const instances=new Map();
  for(const site of config.video.sites){if(!/^[a-zA-Z0-9_-]+$/.test(site.key)||!factories[site.api])throw new Error('订阅模块配置无效');const spider=factories[site.api]();await spider.init({skey:site.key,stype:site.type,ext:site.ext});instances.set(site.key,spider);}

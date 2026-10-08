@@ -3,7 +3,9 @@
     "sites": [
       {"key":"czzy","name":"厂长┃影视","type":3,"api":"czzy_open.js","ext":{"siteUrls":["https://www.czzy89.com/","https://www.czzymovie.com/"]}},
       {"key":"ganfan","name":"干饭┃影视","type":3,"api":"appget_open.js","ext":{"host":"https://www.douy32mf.top","key":"1234567887654321","version":"120"}},
-      {"key":"yiwan","name":"一碗┃影视","type":3,"api":"appget_open.js","ext":{"host":"https://app.95112475.xyz","key":"5a9w6x58dsq6z3a6","version":"120"}}
+      {"key":"yiwan","name":"一碗┃影视","type":3,"api":"appget_open.js","ext":{"host":"https://app.95112475.xyz","key":"5a9w6x58dsq6z3a6","version":"120"}},
+      {"key":"shucai","name":"蔬菜┃影视","type":3,"api":"appget_open.js","ext":{"discoveryUrl":"https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt","key":"88689667dce61725","version":"120"}},
+      {"key":"dm84","name":"动漫┃巴士","type":3,"api":"dm84_open.js","ext":{"host":"https://dm84.net"}}
     ]
   }
 }

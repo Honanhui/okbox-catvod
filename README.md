@@ -11,6 +11,8 @@
 | 厂长 | 网站 HTML | 自动跟随入口跳转，解析当前分类、搜索表单、详情及播放页 |
 | 干饭 | 肥猫 AppGet 家族 | 独立 Node 请求、AES 响应解密、搜索、详情和签名播放 |
 | 一碗 | 肥猫 AppGet 家族 | 与干饭共用协议实现，各自保存入口和公开初始化参数 |
+| 蔬菜 | 肥猫 AppGet 家族 | 自动读取地址发布页，缓存 15 分钟；部分影片上游未提供集数 |
+| 动漫巴士 | 网站 HTML + 播放器 HTTP API | 分类、搜索、详情与播放器参数解析 |
 
 仅列出已编写适配器的站点，不代表所有影片、线路永久可用。真实核验结果见 `docs/verification.md`。其他缺失站点不会用空实现或名称替换假装可用。
 
@@ -36,6 +38,7 @@ https://raw.githubusercontent.com/你的用户名/你的仓库名/main/dist/inde
 config_open.json            站点名称、模块及源站初始化参数
 czzy_open.js                厂长单站适配器
 appget_open.js              AppGet 协议适配器，可生成多个独立站点实例
+dm84_open.js                动漫巴士单站适配器
 lib/cat.js                  HTTP、HTML、AES、集数编码
 index.js                    Cat /config 与 /spider HTTP 服务
 scripts/build.mjs           打包 JS 并计算 MD5
@@ -83,7 +86,3 @@ GitHub Actions 在源码或站点参数改变后重新生成 JS。厂长会自�
 参考格式：https://github.com/itfw/CatVodOpen
 
 参考协议资料：https://github.com/qist/tvbox/tree/master/cat/js
-
-## qist 参考结果
-
-已参考 qist 的厂长播放器协议补充 AES 分支，具体复用范围、不能直接运行的文件及验证边界见 [qist 参考记录](docs/qist-reference.md)。测试结果见 [验证记录](docs/verification.md)。

@@ -23696,7 +23696,9 @@ var config_open_default = {
     sites: [
       { key: "czzy", name: "\u5382\u957F\u2503\u5F71\u89C6", type: 3, api: "czzy_open.js", ext: { siteUrls: ["https://www.czzy89.com/", "https://www.czzymovie.com/"] } },
       { key: "ganfan", name: "\u5E72\u996D\u2503\u5F71\u89C6", type: 3, api: "appget_open.js", ext: { host: "https://www.douy32mf.top", key: "1234567887654321", version: "120" } },
-      { key: "yiwan", name: "\u4E00\u7897\u2503\u5F71\u89C6", type: 3, api: "appget_open.js", ext: { host: "https://app.95112475.xyz", key: "5a9w6x58dsq6z3a6", version: "120" } }
+      { key: "yiwan", name: "\u4E00\u7897\u2503\u5F71\u89C6", type: 3, api: "appget_open.js", ext: { host: "https://app.95112475.xyz", key: "5a9w6x58dsq6z3a6", version: "120" } },
+      { key: "shucai", name: "\u852C\u83DC\u2503\u5F71\u89C6", type: 3, api: "appget_open.js", ext: { discoveryUrl: "https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt", key: "88689667dce61725", version: "120" } },
+      { key: "dm84", name: "\u52A8\u6F2B\u2503\u5DF4\u58EB", type: 3, api: "dm84_open.js", ext: { host: "https://dm84.net" } }
     ]
   }
 };
@@ -37823,16 +37825,33 @@ function __jsEvalReturn() {
 // appget_open.js
 function __jsEvalReturn2() {
   const request = createRequest();
-  let host, key, version, token;
+  let host, key, version, token, discoveryUrl, resolvedAt = 0, discoveryTask;
   async function init(cfg) {
     const ext = typeof cfg.ext === "string" ? JSON.parse(cfg.ext) : cfg.ext;
-    host = httpUrl(ext.host).replace(/\/$/, "");
+    discoveryUrl = ext.discoveryUrl ? httpUrl(ext.discoveryUrl) : "";
+    host = ext.host ? httpUrl(ext.host).replace(/\/$/, "") : "";
+    if (!host && !discoveryUrl) throw new Error("\u8BF7\u914D\u7F6E AppGet \u5730\u5740");
     key = ext.key;
     version = String(ext.version || "120");
     token = ext.token || "";
+    resolvedAt = 0;
     if (Buffer.byteLength(key) !== 16) throw new Error("AppGet \u516C\u5F00\u534F\u8BAE\u5BC6\u94A5\u5FC5\u987B\u4E3A16\u5B57\u8282");
   }
+  async function resolveHost() {
+    if (!discoveryUrl || host && Date.now() - resolvedAt < 15 * 6e4) return;
+    if (!discoveryTask) discoveryTask = (async () => {
+      const response = await request(discoveryUrl);
+      const text3 = response.content.trim();
+      if (!/^https?:\/\/\S+$/.test(text3)) throw new Error("AppGet \u5730\u5740\u53D1\u5E03\u9875\u683C\u5F0F\u5DF2\u6539\u53D8");
+      host = httpUrl(text3).replace(/\/$/, "");
+      resolvedAt = Date.now();
+    })().finally(() => {
+      discoveryTask = null;
+    });
+    await discoveryTask;
+  }
   async function api(path, body = {}, signed = false) {
+    await resolveHost();
     const timestamp = String(Math.floor(Date.now() / 1e3));
     const headers = { "user-agent": "okhttp/3.14.9", "content-type": "application/json", "app-user-device-id": "2e714ed1a871e3291b797524842448850", "app-version-code": version, "app-api-verify-time": timestamp, "app-ui-mode": "light", "app-user-token": token };
     if (signed) {
@@ -37865,7 +37884,9 @@ function __jsEvalReturn2() {
   async function home() {
     const data2 = await api("initV119");
     const classes = (data2.type_list || []).filter((x) => Number(x.type_id) > 0);
-    return JSON.stringify({ class: classes.map((x) => ({ type_id: String(x.type_id), type_name: x.type_name })), list: videos(data2.recommend_list || []) });
+    let list = videos(data2.recommend_list || []);
+    if (!list.length && classes.length) list = JSON.parse(await category(classes[0].type_id)).list;
+    return JSON.stringify({ class: classes.map((x) => ({ type_id: String(x.type_id), type_name: x.type_name })), list });
   }
   async function homeVod() {
     const value = JSON.parse(await home());
@@ -37919,8 +37940,86 @@ function __jsEvalReturn2() {
   return { init, home, homeVod, category, search, detail, play };
 }
 
+// dm84_open.js
+function __jsEvalReturn3() {
+  const request = createRequest();
+  let host;
+  async function init(cfg) {
+    host = new URL(httpUrl(cfg.ext.host)).origin;
+  }
+  async function page(path) {
+    const url = httpUrl(path, host);
+    if (new URL(url).origin !== host) throw Error("\u52A8\u6F2B\u5DF4\u58EB\u9875\u9762\u6807\u8BC6\u65E0\u6548");
+    const response = await request(url);
+    return { $: load(response.content), html: response.content, url: response.url };
+  }
+  function list($2) {
+    const rows = /* @__PURE__ */ new Map();
+    $2('a[href^="/v/"]').each((_, el) => {
+      const a = $2(el), id = a.attr("href")?.match(/^\/v\/(\d+)\.html$/)?.[1];
+      if (!id || rows.has(id)) return;
+      const container = a.closest("li"), cover = container.find(".cover"), img = container.find("img");
+      rows.set(id, { vod_id: id, vod_name: clean(container.find("a.title").text() || a.attr("title") || a.text()).replace(/在线观看$/, ""), vod_pic: cover.attr("data-bg") || img.attr("data-src") || img.attr("src") || "", vod_remarks: container.find(".desc").text().trim() });
+    });
+    return [...rows.values()];
+  }
+  async function home() {
+    const { $: $2 } = await page("/");
+    const classes = /* @__PURE__ */ new Map();
+    $2('a[href^="/list-"]').each((_, el) => {
+      const a = $2(el), id = a.attr("href").match(/^\/list-(\d+)\.html$/)?.[1];
+      if (id && !classes.has(id)) classes.set(id, { type_id: id, type_name: a.text().trim() });
+    });
+    return JSON.stringify({ class: [...classes.values()], list: list($2) });
+  }
+  async function category(tid, pg = 1) {
+    if (!/^\d+$/.test(tid)) throw Error("\u65E0\u6548\u5206\u7C7B");
+    pg = Math.max(1, Number(pg) || 1);
+    const { $: $2 } = await page(`/list-${tid}-${pg}.html`);
+    const videos = list($2);
+    return JSON.stringify({ list: videos, page: pg, pagecount: $2("a").toArray().some((el) => /下一页/.test($2(el).text())) ? pg + 1 : pg });
+  }
+  async function search(wd, quick = false, pg = 1) {
+    const { $: $2 } = await page("/s----------.html?wd=" + encodeURIComponent(wd) + "&page=" + Math.max(1, Number(pg) || 1));
+    return JSON.stringify({ list: list($2), page: Number(pg) });
+  }
+  async function detail(id) {
+    if (!/^\d+$/.test(id)) throw Error("\u65E0\u6548\u89C6\u9891\u6807\u8BC6");
+    const { $: $2 } = await page("/v/" + id + ".html");
+    const names = $2(".play_from li").toArray().map((el) => clean($2(el).text()));
+    const groups = $2(".play_list").toArray().map((el) => $2(el).find('a[href^="/p/"]').toArray().map((a) => clean($2(a).text()) + "$" + encodeEpisode({ path: $2(a).attr("href") })).join("#"));
+    if (!groups.length) throw Error("\u52A8\u6F2B\u5DF4\u58EB\u8BE6\u60C5\u672A\u8FD4\u56DE\u96C6\u6570");
+    return JSON.stringify({ list: [{ vod_id: id, vod_name: $2("h1").first().text().trim(), vod_content: $2(".desc").text().trim(), vod_play_from: groups.map((_, i) => names[i] || "\u7EBF\u8DEF" + (i + 1)).join("$$$"), vod_play_url: groups.join("$$$") }] });
+  }
+  async function play(flag, id) {
+    const { path } = decodeEpisode(id);
+    if (!/^\/p\/\d+-\d+-\d+\.html$/.test(path)) throw Error("\u65E0\u6548\u96C6\u6570\u6807\u8BC6");
+    const { $: $2, url } = await page(path);
+    const src = $2("iframe[src]").first().attr("src");
+    if (!src) throw Error("\u52A8\u6F2B\u5DF4\u58EB\u672A\u8FD4\u56DE\u64AD\u653E\u5668");
+    const iframe = httpUrl(src, url), response = await request(iframe, { headers: { referer: url } });
+    const raw = response.content.match(/window\.__HHJX_BOOTSTRAP__\s*=\s*(\{[^\n]*?\});?\s*<\/script>/)?.[1];
+    if (!raw) throw Error("\u52A8\u6F2B\u5DF4\u58EB\u64AD\u653E\u5668\u534F\u8BAE\u5DF2\u66F4\u65B0");
+    const boot = JSON.parse(raw);
+    if (boot.error) throw Error("\u52A8\u6F2B\u5DF4\u58EB\u64AD\u653E\u5668\u53C2\u6570\u9519\u8BEF");
+    const endpoint = new URL("/api/parse", iframe).href;
+    const parsed = await request(endpoint, { method: "POST", headers: { "content-type": "application/json", referer: iframe }, body: JSON.stringify({ url: boot.url, t: boot.t, key: boot.key, client_fallback: false, ...boot.act === 99 ? { act: 99 } : {} }) });
+    const result = JSON.parse(parsed.content);
+    if (result.code !== 200 || !result.url) throw Error("\u52A8\u6F2B\u5DF4\u58EB\u89E3\u6790\u672A\u8FD4\u56DE\u89C6\u9891\u5730\u5740");
+    if (result.ext === "youku") throw Error("\u8BE5\u7EBF\u8DEF\u9700\u8981\u6D4F\u89C8\u5668\u89E3\u6790\uFF0C\u5C1A\u672A\u9002\u914D");
+    let media = httpUrl(result.url, iframe);
+    if (result.ext === "hls_rewrite") {
+      const rewrite = new URL("/getts", iframe);
+      for (const [k, v] of Object.entries({ url: media, t: boot.t, key: boot.ts_key })) rewrite.searchParams.set(k, String(v));
+      media = rewrite.href;
+    }
+    return JSON.stringify({ parse: 0, url: media, header: { "User-Agent": UA, Referer: iframe } });
+  }
+  return { init, home, category, search, detail, play };
+}
+
 // index.js
-var factories = { "czzy_open.js": __jsEvalReturn, "appget_open.js": __jsEvalReturn2 };
+var factories = { "czzy_open.js": __jsEvalReturn, "appget_open.js": __jsEvalReturn2, "dm84_open.js": __jsEvalReturn3 };
 async function createApp() {
   const instances = /* @__PURE__ */ new Map();
   for (const site of config_open_default.video.sites) {

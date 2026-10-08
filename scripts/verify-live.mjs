@@ -3,11 +3,11 @@ import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 process.env.CATVOD_DISABLE_AUTOSTART='1';
 const {createApp}=await import('../index.js');const {instances,catalogue}=await createApp();const results=[];
-for(const site of catalogue.video.sites){const spider=instances.get(site.key),row={key:site.key,name:site.name,checkedAt:new Date().toISOString(),state:'failed'};
+for(const site of catalogue.video.sites.filter(s=>!process.env.SITE_KEYS||process.env.SITE_KEYS.split(',').includes(s.key))){const spider=instances.get(site.key),row={key:site.key,name:site.name,checkedAt:new Date().toISOString(),state:'failed'};
  try{
   const home=JSON.parse(await spider.home());row.classes=home.class?.length||0;row.home=home.list?.length||0;
   if(home.class?.length){try{const category=JSON.parse(await spider.category(home.class[0].type_id,1,true,{}));row.category=category.list?.length||0;}catch(error){row.categoryError=error.message;}}
-  try{const search=JSON.parse(await spider.search('庆余年',false,1));row.search=search.list?.length||0;}catch(error){row.searchError=error.message;}
+  try{const search=JSON.parse(await spider.search(site.key==='dm84'?'斗罗':'庆余年',false,1));row.search=search.list?.length||0;}catch(error){row.searchError=error.message;}
   const videos=home.list?.length?home.list:JSON.parse(await spider.homeVod()).list;
   let success=false;const attempts=[];
   for(const video of (videos||[]).slice(0,3)){try{const detail=JSON.parse(await spider.detail(video.vod_id)).list[0];row.detail=true;const groups=detail.vod_play_url.split('$$$'),flags=detail.vod_play_from.split('$$$');row.lines=groups.length;
