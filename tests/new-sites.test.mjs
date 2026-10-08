@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import http from 'node:http';
+import {__jsEvalReturn as firstaid} from '../firstaid_open.js';
+import {__jsEvalReturn as auete} from '../auete_open.js';
+import {encodeEpisode} from '../lib/cat.js';
+async function fixture(handler,task){const server=http.createServer(handler);await new Promise(r=>server.listen(0,'127.0.0.1',r));try{await task('http://127.0.0.1:'+server.address().port);}finally{await new Promise(r=>server.close(r));}}
+test('急救教学 caches catalogue, searches locally, and refreshes video URLs for playback',async()=>{
+ let catalogues=0,details=0;
+ await fixture((req,res)=>{if(req.url==='/jijiu/'){catalogues++;res.end('<div><img src="/banner.png"></div><div class="jj-title-li"><a href="/jijiu/article/abc.html">人工呼吸</a></div>');}else{details++;res.end('<title>人工呼吸</title><video id="video" poster="/poster.jpg"><source src="https://media.example/'+details+'.mp4"></video>');}},async host=>{const a=firstaid();await a.init({ext:{host}});assert.equal(JSON.parse(await a.home()).class.length,1);assert.equal(JSON.parse(await a.category('0')).list.length,1);assert.equal(JSON.parse(await a.search('人工')).list.length,1);assert.equal(JSON.parse(await a.search('不存在')).list.length,0);assert.equal(catalogues,1);const d=JSON.parse(await a.detail('/jijiu/article/abc.html')).list[0];assert.equal(JSON.parse(await a.play('',d.vod_play_url.split('$')[1])).url,'https://media.example/2.mp4');await assert.rejects(()=>a.detail('https://outside.example'),/无效/);});
+});
+test('奥特 preserves separate lines and parses base64 media without executing page scripts',async()=>{
+ await fixture((req,res)=>{if(req.url.includes('/play-')){res.end('throw new Error("must not execute");var now=base64decode("'+Buffer.from('https://media.example/a.m3u8').toString('base64')+'");');return;}if(req.url==='/Movie/jsp/test/'){res.end('<h1>影片</h1>'+[0,1].map(i=>'<div id="player_list"><div class="card-header"><b>线'+i+'</b></div><a href="/Movie/jsp/test/play-'+i+'-0.html">正片</a></div>').join(''));return;}res.end('<form action="/auete4so.php"><input name="searchword"></form><ul class="mr-auto"><li><a href="/Movie/index.html">电影</a></li></ul><a href="/Movie/jsp/test/"><img alt="影片" src="/poster.jpg"></a>');},async host=>{const a=auete();await a.init({ext:{host}});assert.equal(JSON.parse(await a.home()).class[0].type_id,'Movie');assert.equal(JSON.parse(await a.category('Movie')).list.length,1);assert.equal(JSON.parse(await a.search('影片')).list.length,1);const d=JSON.parse(await a.detail('/Movie/jsp/test/')).list[0];assert.equal(d.vod_play_from,'线0$$$线1');const id=d.vod_play_url.split('$$$')[1].split('$')[1];assert.equal(JSON.parse(await a.play('',id)).url,'https://media.example/a.m3u8');await assert.rejects(()=>a.play('',encodeEpisode({path:'//outside.example/play-0-0.html'})),/无效/);});
+});

@@ -13,6 +13,10 @@
 | 一碗 | 肥猫 AppGet 家族 | 与干饭共用协议实现，各自保存入口和公开初始化参数 |
 | 蔬菜 | 肥猫 AppGet 家族 | 自动读取地址发布页，缓存 15 分钟；部分影片上游未提供集数 |
 | 动漫巴士 | 网站 HTML + 播放器 HTTP API | 分类、搜索、详情与播放器参数解析 |
+| 急救教学 | 有来医生公开教学栏目 | 八类栏目、栏目内搜索、详情和 MP4，Docker 已验证音视频 |
+| 奥特影视 | 网站 HTML | 分类、详情、多线路及 base64 媒体解析；搜索需要源站验证，实际视频仍待验证 |
+| 潮流影视 | AppRJ | Multipart 签名接口、分类筛选、搜索、详情和线路解析；音视频验证尚未通过 |
+| 光盘影视 | Qiji App API | 单独协议命名空间及初始化版本；Docker 验证到1080p音视频，搜索接口404 |
 
 仅列出已编写适配器的站点，不代表所有影片、线路永久可用。真实核验结果见 `docs/verification.md`。其他缺失站点不会用空实现或名称替换假装可用。
 
@@ -40,6 +44,8 @@ czzy_open.js                厂长单站适配器
 appget_open.js              AppGet 协议适配器，可生成多个独立站点实例
 dm84_open.js                动漫巴士单站适配器
 lib/cat.js                  HTTP、HTML、AES、集数编码
+spiders/registry.js          模块注册、站点开关与独立按需初始化
+references/cat-sites.json    参考订阅目录快照，不参与运行
 index.js                    Cat /config 与 /spider HTTP 服务
 scripts/build.mjs           打包 JS 并计算 MD5
 scripts/verify-live.mjs      真实源验证，独立于离线构建
@@ -74,7 +80,7 @@ npm run verify:live
 ## 后续新增站点
 
 1. 新建 `xxx_open.js`，导出 `__jsEvalReturn()` 工厂；每次调用返回独立的 `init/home/homeVod/category/search/detail/play` 方法实例。
-2. 在 `index.js` 的 `factories` 注册模块，在 `config_open.json` 添加站点。
+2. 在 `spiders/registry.js` 注册模块，在 `config_open.json` 添加站点。
 3. 运行模拟测试、构建和真实完整流程核验，再启用站点。
 
 脚本内部使用 Node 的 HTTP、加密和 HTML 解析，不依赖客户端全局 `req`、`assets://` 或 Dart。虽然接口结构相似，不能保证这些源码直接放进旧版 CatVodOpen 客户端执行；交付目标是生成 Docker 可运行的 Node 订阅。
@@ -86,3 +92,11 @@ GitHub Actions 在源码或站点参数改变后重新生成 JS。厂长会自�
 参考格式：https://github.com/itfw/CatVodOpen
 
 参考协议资料：https://github.com/qist/tvbox/tree/master/cat/js
+
+## qist 参考结果
+
+已参考 qist 的厂长播放器协议补充 AES 分支，具体复用范围、不能直接运行的文件及验证边界见 [qist 参考记录](docs/qist-reference.md)。测试结果见 [验证记录](docs/verification.md)。
+
+## Cat 结构参考
+
+参考订阅的下载内容、94条目录快照来源和本次架构优化见 [结构说明](docs/cat-structure.md)。在 config_open.json 中为某站设置 `enable:false` 可停用该站；增加新协议时在 spiders/registry.js 注册模块工厂。构建后仍只需一个 index.js 和 MD5。

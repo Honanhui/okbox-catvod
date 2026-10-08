@@ -1,0 +1,1356 @@
+{
+  "date": "2026-10-08",
+  "note": "逐原条目列出，不把已有候选算成新适配成功，不把未实现标记为阻塞或完成",
+  "rows": [
+    {
+      "subscription": "饭太硬",
+      "name": "豆豆┃片单",
+      "originalApi": "csp_DouDouGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🗂我的云盘┃配置",
+      "originalApi": "csp_MyDriveGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "👽玩偶哥哥┃4K弹幕",
+      "originalApi": "csp_WoGGGuard",
+      "referenceCandidate": "玩偶|4K",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🚀荐影┃预告片",
+      "originalApi": "csp_YGPGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🎙️易听┃音乐",
+      "originalApi": "csp_MusicGuard",
+      "referenceCandidate": "易听|音乐",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "💡聚剧┃四盘",
+      "originalApi": "csp_SeedhubGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🌞光影┃不卡",
+      "originalApi": "csp_T4Guard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "👒原创┃不卡",
+      "originalApi": "csp_YCyzGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "📔厂长┃不卡",
+      "originalApi": "csp_NewCzGuard",
+      "referenceCandidate": null,
+      "adapter": "czzy",
+      "state": "部分验证",
+      "reason": ""
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🌟立播┃不卡",
+      "originalApi": "csp_LibvioGuard",
+      "referenceCandidate": "立播|4K",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "👀瓜子┃不卡",
+      "originalApi": "csp_AppgzGuard",
+      "referenceCandidate": "瓜子|秒播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🍄比特┃不卡",
+      "originalApi": "csp_BttwooGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🍓糯米┃秒播",
+      "originalApi": "csp_NmyswvGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "💮文采┃秒播",
+      "originalApi": "csp_JpysGuard",
+      "referenceCandidate": "文采|秒播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🧀奶酪┃秒播",
+      "originalApi": "csp_T4Guard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "📺热播┃多线",
+      "originalApi": "csp_AppTTGuard",
+      "referenceCandidate": "热播|秒播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🌸茉莉┃多线",
+      "originalApi": "csp_App99Guard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🐻剧圈┃多线",
+      "originalApi": "csp_AppSxGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🥝荐片┃多线",
+      "originalApi": "csp_JPJGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要确认P2P/磁力播放引擎和HTTP兼容范围"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🏝奥特┃多线",
+      "originalApi": "csp_AueteGuard",
+      "referenceCandidate": null,
+      "adapter": "auete",
+      "state": "部分验证",
+      "reason": ""
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🧲新6V┃磁力",
+      "originalApi": "csp_SixVGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要确认P2P/磁力播放引擎和HTTP兼容范围"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "❤️AI┃短漫剧",
+      "originalApi": "csp_AiDjGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🦉咕咕┃动漫",
+      "originalApi": "csp_AppSxGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🚌巴士┃动漫",
+      "originalApi": "csp_Dm84Guard",
+      "referenceCandidate": null,
+      "adapter": "dm84",
+      "state": "部分验证",
+      "reason": ""
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "⚽八八┃看球",
+      "originalApi": "csp_KanqiuGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🏀多多┃回放",
+      "originalApi": "csp_DoubaoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🏐吃瓜┃看球",
+      "originalApi": "csp_LiveGzGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🎮一直播┃直播",
+      "originalApi": "csp_AllliveGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🎶明星┃MV",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "哔哩┃歌曲",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🎧有声┃小说",
+      "originalApi": "csp_Tingshu275Guard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🚑急救┃教学",
+      "originalApi": "csp_FirstAidGuard",
+      "referenceCandidate": null,
+      "adapter": "firstaid",
+      "state": "音视频通过",
+      "reason": ""
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🐯虎牙┃直播",
+      "originalApi": "https://git.yylx.win/https://raw.githubusercontent.com/fantaiying7/EXT/refs/heads/main/drpy2.min.js",
+      "referenceCandidate": "虎牙|直播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🐟斗鱼┃直播",
+      "originalApi": "https://git.yylx.win/https://raw.githubusercontent.com/fantaiying7/EXT/refs/heads/main/drpy2.min.js",
+      "referenceCandidate": "斗鱼|直播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🎈盘搜┃四盘",
+      "originalApi": "csp_S_zpsGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🦋易搜┃四盘",
+      "originalApi": "csp_S_zpsGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🐌盘她┃夸父",
+      "originalApi": "csp_YpanSoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🐞盘他┃嘟嘟",
+      "originalApi": "csp_BpanSoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🌶️抠抠┃搜搜",
+      "originalApi": "csp_KkSsGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🌈优汐┃搜搜",
+      "originalApi": "csp_UuSsGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🅱哔哔合集┃弹幕",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "哔哩┃合集",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🅱哔哔演唱会┃弹幕",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "哔哩┃歌曲",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "📚儿童┃启蒙",
+      "originalApi": "https://git.yylx.win/https://raw.githubusercontent.com/fantaiying7/EXT/refs/heads/main/drpy2.min.js",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "📚少儿┃教育",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "少儿┃教育",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "📚小学┃课堂",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "小学┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "📚初中┃课堂",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "初中┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "📚高中┃课堂",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "高中┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "🛴手机┃推送",
+      "originalApi": "csp_PushGuard",
+      "referenceCandidate": "推送",
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "饭太硬",
+      "name": "请勿信视频中任何广告",
+      "originalApi": "csp_XPathGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🐼┃QQ频道：肥猫宝贝┃",
+      "originalApi": "csp_Douban",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🐼┃豆瓣┃预告",
+      "originalApi": "csp_YGP",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🐼┃配置┃中心",
+      "originalApi": "csp_Config",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "⚡┃闪电┃优汐",
+      "originalApi": "csp_Duopan",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🖍︎┃蜡笔┃影视",
+      "originalApi": "csp_Duopan",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "💌┃️至臻┃影视",
+      "originalApi": "csp_Duopan",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🏜┃潮流┃APP",
+      "originalApi": "csp_AppRJ",
+      "referenceCandidate": null,
+      "adapter": "apprj",
+      "state": "部分验证",
+      "reason": ""
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🐼┃肥猫┃APP",
+      "originalApi": "csp_AppGet",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "上游异常，尚未接入",
+      "reason": "ECONNREFUSED"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🍚┃干饭┃APP",
+      "originalApi": "csp_AppGet",
+      "referenceCandidate": null,
+      "adapter": "ganfan",
+      "state": "部分验证",
+      "reason": ""
+    },
+    {
+      "subscription": "肥猫",
+      "name": "📀┃光盘┃APP",
+      "originalApi": "csp_AppQi",
+      "referenceCandidate": null,
+      "adapter": "appqi",
+      "state": "音视频通过，搜索404",
+      "reason": ""
+    },
+    {
+      "subscription": "肥猫",
+      "name": "😌┃行动┃APP",
+      "originalApi": "csp_AppDrama",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "地址发布页可达；Protobuf、RSA与多重签名协议尚未实现"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "✌️┃再来┃APP",
+      "originalApi": "csp_AppDrama",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "地址发布页可达；Protobuf、RSA与多重签名协议尚未实现"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🥣┃一碗┃APP",
+      "originalApi": "csp_AppGet",
+      "referenceCandidate": null,
+      "adapter": "yiwan",
+      "state": "音视频通过",
+      "reason": ""
+    },
+    {
+      "subscription": "肥猫",
+      "name": "⭕┃韩圈 ┃APP",
+      "originalApi": "csp_Hxq",
+      "referenceCandidate": "韩剧|秒播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🫛┃蔬菜┃APP",
+      "originalApi": "csp_AppGet",
+      "referenceCandidate": null,
+      "adapter": "shucai",
+      "state": "部分验证",
+      "reason": ""
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🥇️┃金牌┃影视",
+      "originalApi": "csp_Jpys",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🌾️┃农民┃影视",
+      "originalApi": "csp_Wwys",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "入口根页面为404内容；仍需查找实际列表及播放路由"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🎬┃荐片┃影视",
+      "originalApi": "csp_Jianpian",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要确认P2P/磁力播放引擎和HTTP兼容范围"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🔥┃火火┃影视",
+      "originalApi": "csp_SaoHuo",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "上游异常，尚未接入",
+      "reason": "HTTP522"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🍉┃瓜子┃影视",
+      "originalApi": "csp_Gz360",
+      "referenceCandidate": "瓜子|秒播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🏭┃厂长┃影视",
+      "originalApi": "csp_Czsapp",
+      "referenceCandidate": null,
+      "adapter": "czzy",
+      "state": "部分验证",
+      "reason": ""
+    },
+    {
+      "subscription": "肥猫",
+      "name": "📺┃360┃官源",
+      "originalApi": "csp_SP360",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🅱┃️哔哩┃合集",
+      "originalApi": "csp_Bili",
+      "referenceCandidate": "哔哩┃合集",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🤣┃动漫┃巴士",
+      "originalApi": "csp_Dm84",
+      "referenceCandidate": null,
+      "adapter": "dm84",
+      "state": "部分验证",
+      "reason": ""
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🐷┃方舟┃动漫",
+      "originalApi": "csp_AppGet",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "上游异常，尚未接入",
+      "reason": "HTTP403"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🍠┃番薯┃动漫",
+      "originalApi": "csp_AppGet",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "上游异常，尚未接入",
+      "reason": "非预期JSON"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🚑┃急救┃教学",
+      "originalApi": "csp_FirstAid",
+      "referenceCandidate": null,
+      "adapter": "firstaid",
+      "state": "音视频通过",
+      "reason": ""
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🐾┃酷狗┃音乐",
+      "originalApi": "csp_Kugou",
+      "referenceCandidate": "小狗|音乐",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🎧┃明星┃MV",
+      "originalApi": "csp_Bili",
+      "referenceCandidate": "哔哩┃歌曲",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "⚾┃看球┃直播",
+      "originalApi": "csp_Kanqiu",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🏀┃瓜子┃体育",
+      "originalApi": "csp_GuaziTY",
+      "referenceCandidate": "瓜子|体育",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🌖┃米搜┃网盘",
+      "originalApi": "csp_MiSou",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "🚃┃盘搜┃网盘",
+      "originalApi": "csp_PanSearch",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "📚┃儿童┃启蒙",
+      "originalApi": "./api/drpy2.min.js",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "📚┃少儿┃教育",
+      "originalApi": "csp_Bili",
+      "referenceCandidate": "少儿┃教育",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "📚┃小学┃课堂",
+      "originalApi": "csp_Bili",
+      "referenceCandidate": "小学┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "📚┃初中┃课堂",
+      "originalApi": "csp_Bili",
+      "referenceCandidate": "初中┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "📚┃高中┃课堂",
+      "originalApi": "csp_Bili",
+      "referenceCandidate": "高中┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "肥猫",
+      "name": "QQ频道：肥猫宝贝",
+      "originalApi": "csp_Push",
+      "referenceCandidate": "推送",
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🐮【免费分享】🐮",
+      "originalApi": "csp_DoubanGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🐮【更新日期:20260911】🐮",
+      "originalApi": "csp_DoubanGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "⬇️【网盘类先扫码】⬇️",
+      "originalApi": "csp_DoubanGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🐮通用类型┃配置中心🐮",
+      "originalApi": "csp_WexconfigGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🐮影视专用┃配置中心🐮",
+      "originalApi": "csp_WexokconfigGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓‍玩偶┃4K💓‍",
+      "originalApi": "csp_WoggGuard",
+      "referenceCandidate": "玩偶|4K",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓无名┃4K💓",
+      "originalApi": "csp_WexnullnameGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓多多┃4K💓",
+      "originalApi": "csp_WexduoduoziyuanGuard",
+      "referenceCandidate": "多多|4K",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓木偶┃4K💓",
+      "originalApi": "csp_WexmuouggGuard",
+      "referenceCandidate": "木偶|4K",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓双星┃4K💓",
+      "originalApi": "csp_WexshuangzixingGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓虎斑┃4K💓",
+      "originalApi": "csp_WexhubanGuard",
+      "referenceCandidate": "虎斑|4K",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓123┃4K💓",
+      "originalApi": "csp_Wexpan123ziyuanGuard",
+      "referenceCandidate": "盘迷|4K",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💥韩剧┃秒播💥",
+      "originalApi": "csp_WexhanxiaoquanGuard",
+      "referenceCandidate": "韩剧|秒播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💥賤片┃p2p💥",
+      "originalApi": "csp_WexJianpianGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要确认P2P/磁力播放引擎和HTTP兼容范围"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💥葵花┃影视💥",
+      "originalApi": "csp_WexkuihuatvGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🌺文才┃秒播🌺",
+      "originalApi": "csp_WexwencaiGuard",
+      "referenceCandidate": "文采|秒播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎇伯伯┃秒播🎇",
+      "originalApi": "csp_WexNmysGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎇大鼻涕┃秒播🎇",
+      "originalApi": "csp_WexbttwoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎇爱看┃采集🎇",
+      "originalApi": "csp_WexikanbotGuard",
+      "referenceCandidate": "爱看|采集",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🛩️新6V┃P2P🛩",
+      "originalApi": "csp_WexXb6vGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要确认P2P/磁力播放引擎和HTTP兼容范围"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🀄️emby┃4K🀄️",
+      "originalApi": "csp_WexembyGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🐯‍虎牙┃直播🐯‍",
+      "originalApi": "csp_WexNewHuYaGuard",
+      "referenceCandidate": "虎牙|直播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🐳斗鱼┃直播🐳",
+      "originalApi": "csp_WexNewDouYuGuard",
+      "referenceCandidate": "斗鱼|直播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🅱️哔哩┃直播🅱️",
+      "originalApi": "csp_WexNewBiLiLiveGuard",
+      "referenceCandidate": "哔哩|直播",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🍉短剧┃秒播🍉",
+      "originalApi": "csp_WexduanjuvopGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🍉短剧┃速播🍉",
+      "originalApi": "csp_WexduanjusuipianGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🍉短剧┃瞬播🍉",
+      "originalApi": "csp_WexduanjuvmpGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🍉短剧┃仙品🍉",
+      "originalApi": "csp_WexduanjuhemaGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🍉短剧┃神品🍉",
+      "originalApi": "csp_Wexduanju001Guard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎃‍白兔┃听书🎃",
+      "originalApi": "csp_WexlaobaitingshuGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎃‍极品┃听书🎃",
+      "originalApi": "csp_Wex275tingshuGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎎戏曲┃秒播🎎",
+      "originalApi": "csp_WexliyuanGuard",
+      "referenceCandidate": "梨园|戏曲",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💃跳舞┃教学💃",
+      "originalApi": "csp_WextangdouGuard",
+      "referenceCandidate": "糖豆|舞蹈",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "👼多多┃儿歌👼",
+      "originalApi": "csp_WexergeduoduoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "👼宝宝┃儿歌👼",
+      "originalApi": "csp_WexbaobaobashiGuard",
+      "referenceCandidate": "宝宝|少儿",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "👼贝贝┃儿歌👼",
+      "originalApi": "csp_WexbeiwaGuard",
+      "referenceCandidate": "贝瓦|少儿",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "👼兔兔┃儿歌👼",
+      "originalApi": "csp_WextuxiaobeiGuard",
+      "referenceCandidate": "兔兔|少儿",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎤KTV┃音乐🎤",
+      "originalApi": "csp_WexIktvGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🥇全能┃DIY🥇",
+      "originalApi": "csp_WexdiyGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🥇Alist┃DIY🥇",
+      "originalApi": "csp_AListGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🅱‍哔哔┃影视🅱‍",
+      "originalApi": "csp_WexbiliysGuard",
+      "referenceCandidate": "哔哩┃影视",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🅱哔哔┃合集🅱",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "哔哩┃合集",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🅱哔哔┃歌曲🅱",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "哔哩┃歌曲",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "📚少儿┃教育📚",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "少儿┃教育",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "📚小学┃课堂📚",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "小学┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "📚初中┃课堂📚",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "初中┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "📚高中┃课堂📚",
+      "originalApi": "csp_BiliGuard",
+      "referenceCandidate": "高中┃课堂",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎼轮回┃舞曲🎼",
+      "originalApi": "csp_WexLunhuiDJGuard",
+      "referenceCandidate": "轮回|舞曲",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🌐88┃体育🌐",
+      "originalApi": "csp_KanqiuGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "尚未完成独立Node请求与播放协议核验"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🌐瓜子┃体育🌐",
+      "originalApi": "csp_WexGZsportGuard",
+      "referenceCandidate": "瓜子|体育",
+      "adapter": null,
+      "state": "参考Cat已有候选，不重复添加",
+      "reason": "仅名称/家族对应，仍不能证明所有接口和线路相同"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎠给力┃天逸🎠",
+      "originalApi": "csp_WextysoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎠给力┃百度🎠",
+      "originalApi": "csp_WexbaidusoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎠海音┃综合🎠",
+      "originalApi": "csp_WexHaiYinsoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "王二小",
+      "name": "🎠九七┃综合🎠",
+      "originalApi": "csp_Wex97pansoGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "待实现",
+      "reason": "需要分享解析、原站协议和对应用户网盘账号对接"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓我的┃115💓‍",
+      "originalApi": "csp_Wex115shareGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓我的┃天逸💓‍",
+      "originalApi": "csp_WexWo189Guard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓我的┃夸克💓‍",
+      "originalApi": "csp_WexWoquarkpanGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓我的┃优熙💓‍",
+      "originalApi": "csp_WexWoucpanGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓我的┃异动💓‍",
+      "originalApi": "csp_WexWoydpanGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓我的┃123💓‍",
+      "originalApi": "csp_WexWo123panGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓我的┃讯蕾💓‍",
+      "originalApi": "csp_WexWoXunLeiPanGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "💓我的┃百度💓‍",
+      "originalApi": "csp_WexWoBaiduPanGuard",
+      "referenceCandidate": null,
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    },
+    {
+      "subscription": "王二小",
+      "name": "推送",
+      "originalApi": "csp_PushGuard",
+      "referenceCandidate": "推送",
+      "adapter": null,
+      "state": "不属于补齐影视爬虫",
+      "reason": "不计作缺少的影视站"
+    }
+  ]
+}

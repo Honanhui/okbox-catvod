@@ -1,14 +1,14 @@
 import {createRequest,aesDecrypt,aesEncrypt,encodeEpisode,decodeEpisode,clean,httpUrl,UA} from './lib/cat.js';
 export function __jsEvalReturn(){
- const request=createRequest();let host,key,version,token,discoveryUrl,resolvedAt=0,discoveryTask;
- async function init(cfg){const ext=typeof cfg.ext==='string'?JSON.parse(cfg.ext):cfg.ext;discoveryUrl=ext.discoveryUrl?httpUrl(ext.discoveryUrl):'';host=ext.host?httpUrl(ext.host).replace(/\/$/,''):'';if(!host&&!discoveryUrl)throw new Error('请配置 AppGet 地址');key=ext.key;version=String(ext.version||'120');token=ext.token||'';resolvedAt=0;if(Buffer.byteLength(key)!==16)throw new Error('AppGet 公开协议密钥必须为16字节');}
+ const request=createRequest();let host,key,version,token,discoveryUrl,resolvedAt=0,discoveryTask,protocol;
+ async function init(cfg){const ext=typeof cfg.ext==='string'?JSON.parse(cfg.ext):cfg.ext;protocol=ext.protocol||'appget';if(!['appget','qiji'].includes(protocol))throw Error('未知 App 协议');discoveryUrl=ext.discoveryUrl?httpUrl(ext.discoveryUrl):'';host=ext.host?httpUrl(ext.host).replace(/\/$/,''):'';if(!host&&!discoveryUrl)throw new Error('请配置 AppGet 地址');key=ext.key;version=String(ext.version||'120');token=ext.token||'';resolvedAt=0;if(Buffer.byteLength(key)!==16)throw new Error('AppGet 公开协议密钥必须为16字节');}
  async function resolveHost(){if(!discoveryUrl||host&&Date.now()-resolvedAt<15*60000)return;if(!discoveryTask)discoveryTask=(async()=>{const response=await request(discoveryUrl);const text=response.content.trim();if(!/^https?:\/\/\S+$/.test(text))throw new Error('AppGet 地址发布页格式已改变');host=httpUrl(text).replace(/\/$/,'');resolvedAt=Date.now();})().finally(()=>{discoveryTask=null;});await discoveryTask;}
  async function api(path,body={},signed=false){
   await resolveHost();
   const timestamp=String(Math.floor(Date.now()/1000));
   const headers={'user-agent':'okhttp/3.14.9','content-type':'application/json','app-user-device-id':'2e714ed1a871e3291b797524842448850','app-version-code':version,'app-api-verify-time':timestamp,'app-ui-mode':'light','app-user-token':token};
   if(signed){headers['app-api-verify-sign']=aesEncrypt(timestamp,key);headers['content-type']='application/x-www-form-urlencoded';}
-  const response=await request(host+'/api.php/getappapi.index/'+path,{method:'POST',headers,body:signed?body:JSON.stringify(body)});
+  const response=await request(host+'/api.php/'+(protocol==='qiji'?'qijiappapi':'getappapi')+'.index/'+path,{method:'POST',headers,body:signed?body:JSON.stringify(body)});
   let root;try{root=JSON.parse(response.content);}catch{throw new Error('AppGet 返回的不是 JSON');}
   if(typeof root.data==='string'){try{return JSON.parse(aesDecrypt(root.data,key));}catch{throw new Error('AppGet 响应解密失败，可能已更新协议或密钥');}}
   if(root.data&&typeof root.data==='object')return root.data;
@@ -16,7 +16,7 @@ export function __jsEvalReturn(){
  }
  function videos(list=[]){return list.map(x=>({vod_id:String(x.vod_id),vod_name:clean(x.vod_name),vod_pic:x.vod_pic||'',vod_remarks:x.vod_remarks||''}));}
  function paged(list,page){return {page:Number(page),pagecount:list.length?Number(page)+1:Number(page),limit:list.length,total:list.length,list};}
- async function home(){const data=await api('initV119');const classes=(data.type_list||[]).filter(x=>Number(x.type_id)>0);let list=videos(data.recommend_list||[]);if(!list.length&&classes.length)list=JSON.parse(await category(classes[0].type_id)).list;return JSON.stringify({class:classes.map(x=>({type_id:String(x.type_id),type_name:x.type_name})),list});}
+ async function home(){const data=await api(protocol==='qiji'?'initV120':'initV119');const classes=(data.type_list||[]).filter(x=>Number(x.type_id)>0);let list=videos(data.recommend_list||[]);if(!list.length&&classes.length)list=JSON.parse(await category(classes[0].type_id)).list;return JSON.stringify({class:classes.map(x=>({type_id:String(x.type_id),type_name:x.type_name})),list});}
  async function homeVod(){const value=JSON.parse(await home());return JSON.stringify({list:value.list});}
  async function category(tid,page=1,filter=false,extend={}){const data=await api('typeFilterVodList?page='+Number(page),{...extend,type_id:String(tid)});return JSON.stringify(paged(videos(data.recommend_list||[]),page));}
  async function search(wd,quick=false,page=1){const data=await api('searchList',{type_id:'0',keywords:wd,page:String(page)});return JSON.stringify(paged(videos(data.search_list||[]),page));}

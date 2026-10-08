@@ -5,7 +5,11 @@
       {"key":"ganfan","name":"干饭┃影视","type":3,"api":"appget_open.js","ext":{"host":"https://www.douy32mf.top","key":"1234567887654321","version":"120"}},
       {"key":"yiwan","name":"一碗┃影视","type":3,"api":"appget_open.js","ext":{"host":"https://app.95112475.xyz","key":"5a9w6x58dsq6z3a6","version":"120"}},
       {"key":"shucai","name":"蔬菜┃影视","type":3,"api":"appget_open.js","ext":{"discoveryUrl":"https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt","key":"88689667dce61725","version":"120"}},
-      {"key":"dm84","name":"动漫┃巴士","type":3,"api":"dm84_open.js","ext":{"host":"https://dm84.net"}}
+      {"key":"dm84","name":"动漫┃巴士","type":3,"api":"dm84_open.js","ext":{"host":"https://dm84.net"}},
+      {"key":"firstaid","name":"急救┃教学","type":3,"api":"firstaid_open.js","ext":{"host":"https://m.youlai.cn"}},
+      {"key":"auete","name":"奥特┃影视","type":3,"api":"auete_open.js","ext":{"host":"https://www.aeete.com"}},
+      {"key":"apprj","name":"潮流┃影视","type":3,"api":"apprj_open.js","filterable":1,"ext":{"host":"http://v.rbotv.cn","signKey":"7gp0bnd2sr85ydii2j32pcypscoc4w6c7g5spl"}},
+      {"key":"appqi","name":"光盘┃影视","type":3,"api":"appget_open.js","ext":{"host":"http://103.217.190.91:5566","key":"hagYExMdMkeWfemK","protocol":"qiji"}}
     ]
   }
 }
