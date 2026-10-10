@@ -1,0 +1,367 @@
+{
+  "generatedAt": "2026-10-10T14:44:39.321Z",
+  "sourceFormat": "TVBox",
+  "note": "仅输出本项目已有 Node 协议适配器可承接的候选站点；enable=false，在线验证通过后再合入 config_open.json。",
+  "video": {
+    "sites": [
+      {
+        "key": "tvbox_appcms_4ksj_app_2c5c9ab2a5",
+        "name": "🐼┃肥猫┃APP（TVBox 转换候选）",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "https://appcms.4ksj.app",
+          "key": "O3K6rYx75Q4xtiIE",
+          "version": "120"
+        }
+      },
+      {
+        "key": "tvbox_www_douy32mf_top_5aec240958",
+        "name": "🍚┃干饭┃APP（TVBox 转换候选）",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "https://www.douy32mf.top",
+          "key": "1234567887654321",
+          "version": "120"
+        }
+      },
+      {
+        "key": "tvbox_103_217_190_91_87236cc110",
+        "name": "📀┃光盘┃APP（TVBox 转换候选）",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "http://103.217.190.91:5566",
+          "key": "hagYExMdMkeWfemK",
+          "protocol": "qiji"
+        }
+      },
+      {
+        "key": "tvbox_app_95112475_xyz_f4ec32bc6f",
+        "name": "🥣┃一碗┃APP（TVBox 转换候选）",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "https://app.95112475.xyz",
+          "key": "5a9w6x58dsq6z3a6",
+          "version": "120"
+        }
+      },
+      {
+        "key": "tvbox_allinadmin_oss-cn-hangzhou_aliyuncs_com_9d1cf5fbeb",
+        "name": "🫛┃蔬菜┃APP（TVBox 转换候选）",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt",
+          "key": "88689667dce61725",
+          "version": "120"
+        }
+      },
+      {
+        "key": "tvbox_www_czzy89_com_f603a3b37f",
+        "name": "🏭┃厂长┃影视（TVBox 转换候选）",
+        "type": 3,
+        "api": "czzy_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 1,
+        "ext": {
+          "siteUrls": [
+            "https://www.czzy89.com/",
+            "https://www.czzymovie.com/"
+          ]
+        }
+      },
+      {
+        "key": "tvbox_csp_bili_14d3a48fa4",
+        "name": "🅱┃️哔哩┃合集（TVBox 转换候选）",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/0075389dca9afadd4614e9713765ff17.txt"
+        }
+      },
+      {
+        "key": "tvbox_csp_dm84_e643a11b58",
+        "name": "🤣┃动漫┃巴士（TVBox 转换候选）",
+        "type": 3,
+        "api": "dm84_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "host": "https://dm84.net"
+        }
+      },
+      {
+        "key": "tvbox_www_cyfz_top_26ee757aba",
+        "name": "🐷┃方舟┃动漫（TVBox 转换候选）",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "https://www.cyfz.top",
+          "key": "e72cdfd629e8895d",
+          "version": "120"
+        }
+      },
+      {
+        "key": "tvbox_app_omofun1_top_b5ef726f83",
+        "name": "🍠┃番薯┃动漫（TVBox 转换候选）",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "https://app.omofun1.top",
+          "key": "66dc309cbeeca454",
+          "version": "120"
+        }
+      },
+      {
+        "key": "tvbox_csp_firstaid_581b195a6d",
+        "name": "🚑┃急救┃教学（TVBox 转换候选）",
+        "type": 3,
+        "api": "firstaid_open.js",
+        "enable": false,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "host": "https://m.youlai.cn"
+        }
+      },
+      {
+        "key": "tvbox_mtv_14dd12cc72",
+        "name": "🎧┃明星┃MV（TVBox 转换候选）",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/2b4eb-8fb08a6b-f9f1-48d8-816a-1bc712a85fefnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__9c20d6a980",
+        "name": "📚┃少儿┃教育（TVBox 转换候选）",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/1903b-eb0f1675-2437-4e72-bcf0-427b1626d79fnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__355817fabb",
+        "name": "📚┃小学┃课堂（TVBox 转换候选）",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/a1140-144855fe-3eaa-44f3-b689-6812c233de54null"
+        }
+      },
+      {
+        "key": "tvbox_csp__ff763c0d23",
+        "name": "📚┃初中┃课堂（TVBox 转换候选）",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/ba156-73e16cad-8257-4f33-b8c0-e051e72e546dnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__2e3613d24a",
+        "name": "📚┃高中┃课堂（TVBox 转换候选）",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": false,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/e44b3-4a82ab48-e014-49b2-bb66-ee5207e8f195null"
+        }
+      }
+    ]
+  },
+  "skipped": [
+    {
+      "key": "豆瓣",
+      "name": "🐼┃QQ频道：肥猫宝贝┃",
+      "api": "csp_Douban",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "豆瓣预告",
+      "name": "🐼┃豆瓣┃预告",
+      "api": "csp_YGP",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "config",
+      "name": "🐼┃配置┃中心",
+      "api": "csp_Config",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_FeiMaoUC",
+      "name": "⚡┃闪电┃优汐",
+      "api": "csp_Duopan",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_Duopan",
+      "name": "🖍︎┃蜡笔┃影视",
+      "api": "csp_Duopan",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_Netfixtv",
+      "name": "💌┃️至臻┃影视",
+      "api": "csp_Duopan",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "潮流",
+      "name": "🏜┃潮流┃APP",
+      "api": "csp_AppRJ",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "行动",
+      "name": "😌┃行动┃APP",
+      "api": "csp_AppDrama",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "再来",
+      "name": "✌️┃再来┃APP",
+      "api": "csp_AppDrama",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "韩圈",
+      "name": "⭕┃韩圈 ┃APP",
+      "api": "csp_Hxq",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_Jpys",
+      "name": "🥇️┃金牌┃影视",
+      "api": "csp_Jpys",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_Wwys",
+      "name": "🌾️┃农民┃影视",
+      "api": "csp_Wwys",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "荐片",
+      "name": "🎬┃荐片┃影视",
+      "api": "csp_Jianpian",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_SaoHuo",
+      "name": "🔥┃火火┃影视",
+      "api": "csp_SaoHuo",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_Gz360",
+      "name": "🍉┃瓜子┃影视",
+      "api": "csp_Gz360",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_SP360",
+      "name": "📺┃360┃官源",
+      "api": "csp_SP360",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "酷狗",
+      "name": "🐾┃酷狗┃音乐",
+      "api": "csp_Kugou",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "看球",
+      "name": "⚾┃看球┃直播",
+      "api": "csp_Kanqiu",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "瓜子",
+      "name": "🏀┃瓜子┃体育",
+      "api": "csp_GuaziTY",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "米搜",
+      "name": "🌖┃米搜┃网盘",
+      "api": "csp_MiSou",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "csp_PanSearch",
+      "name": "🚃┃盘搜┃网盘",
+      "api": "csp_PanSearch",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "儿童",
+      "name": "📚┃儿童┃启蒙",
+      "api": "./api/drpy2.min.js",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    },
+    {
+      "key": "push_agent",
+      "name": "QQ频道：肥猫宝贝",
+      "api": "csp_Push",
+      "reason": "当前 Node 项目没有该 TVBox csp/JAR/DRPY 协议的 Node 适配器"
+    }
+  ]
+}

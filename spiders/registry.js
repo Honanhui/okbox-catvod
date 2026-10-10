@@ -4,7 +4,9 @@ import {__jsEvalReturn as dm84} from '../dm84_open.js';
 import {__jsEvalReturn as firstaid} from '../firstaid_open.js';
 import {__jsEvalReturn as auete} from '../auete_open.js';
 import {__jsEvalReturn as apprj} from '../apprj_open.js';
-export const modules={'czzy_open.js':czzy,'appget_open.js':appget,'dm84_open.js':dm84,'firstaid_open.js':firstaid,'auete_open.js':auete,'apprj_open.js':apprj};
+import {__jsEvalReturn as bili} from '../bili_open.js';
+import {__jsEvalReturn as maccms} from '../maccms_open.js';
+export const modules={'czzy_open.js':czzy,'appget_open.js':appget,'dm84_open.js':dm84,'firstaid_open.js':firstaid,'auete_open.js':auete,'apprj_open.js':apprj,'bili_open.js':bili,'maccms_open.js':maccms};
 export function createRegistry(config,factories=modules){
  const instances=new Map(),sites=[];
  for(const site of config.video.sites){

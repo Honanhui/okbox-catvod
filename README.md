@@ -1,10 +1,10 @@
-# OKBOX CatVodOpen 0.1
+# OKBOX CatVodOpen 0.2
 
 独立维护的 Node.js 爬虫订阅源码。目录和单站 `__jsEvalReturn()` 接口参考 CatVodOpen；GitHub Actions 将源码打包为 `dist/index.js` 和 `dist/index.js.md5`，供 OKBOX 的 Docker 媒体服务器加载。
 
 本项目不使用 Android、DEX/JAR 或源作者的整个加密程序。不需要把服务器管理中心上传 GitHub。只上传本目录中的文件。
 
-## 首批适配
+## 已纳入发布的适配
 
 | 站点 | 协议 | 说明 |
 |---|---|---|
@@ -17,8 +17,11 @@
 | 奥特影视 | 网站 HTML | 分类、详情、多线路及 base64 媒体解析；搜索需要源站验证，实际视频仍待验证 |
 | 潮流影视 | AppRJ | Multipart 签名接口、分类筛选、搜索、详情和线路解析；音视频验证尚未通过 |
 | 光盘影视 | Qiji App API | 单独协议命名空间及初始化版本；Docker 验证到1080p音视频，搜索接口404 |
+| 饭太硬 Bili | Bilibili 公共 API | 7 个原订阅分类源；已验证首页、分类、搜索、详情和播放 |
+| 肥猫 Bili | Bilibili 公共 API | 6 个原订阅分类源；已验证首页、分类、搜索、详情和播放 |
+| 王二小 Bili | Bilibili 公共 API | 6 个原订阅分类源；已验证首页、分类、搜索、详情和播放 |
 
-仅列出已编写适配器的站点，不代表所有影片、线路永久可用。真实核验结果见 `docs/verification.md`。其他缺失站点不会用空实现或名称替换假装可用。
+默认配置包含 28 个可加载站点：9 个独立协议适配和 19 个已验证的 Bili 分类源。仅列出已编写适配器的站点，不代表所有影片、线路永久可用。真实核验结果见 `docs/verification.md` 与 `converted/README.md`。其他缺失站点不会用空实现或名称替换假装可用。
 
 ## 上传 GitHub 并生成订阅
 
@@ -43,6 +46,8 @@ config_open.json            站点名称、模块及源站初始化参数
 czzy_open.js                厂长单站适配器
 appget_open.js              AppGet 协议适配器，可生成多个独立站点实例
 dm84_open.js                动漫巴士单站适配器
+bili_open.js                Bilibili 公共 API 与 TVBox Bili 分类文件适配器
+maccms_open.js              标准 MacCMS JSON 采集协议适配器
 lib/cat.js                  HTTP、HTML、AES、集数编码
 spiders/registry.js          模块注册、站点开关与独立按需初始化
 references/cat-sites.json    参考订阅目录快照，不参与运行
@@ -87,7 +92,7 @@ npm run verify:live
 
 ## 更新范围
 
-GitHub Actions 在源码或站点参数改变后重新生成 JS。厂长会自动跟随配置入口的跳转；AppGet 地址或公开密钥改变时需要更新 `config_open.json`。本版没有声称自动同步饭太硬/肥猫/王二小所有配置，也没有包含网盘登录或 P2P 下载引擎。
+GitHub Actions 在源码或站点参数改变后重新生成 JS。厂长会自动跟随配置入口的跳转；AppGet 地址或公开密钥改变时需要更新 `config_open.json`。本版已纳入三份订阅中 19 个全流程验证通过的 Bili 源，但没有声称自动同步其余 Guard/JAR/P2P、网盘或短剧协议，也没有包含网盘登录或 P2P 下载引擎。
 
 参考格式：https://github.com/itfw/CatVodOpen
 

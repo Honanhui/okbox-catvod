@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-10-10T14:40:57.514Z",
+  "source": "http://www.xn--sss604efuw.cc/tv",
+  "note": "Bili 7 项已通过 home/category/detail/play/search 在线只读验证；厂长、奥特、动漫巴士、急救教学保留既有 home 验证记录。",
+  "video": {
+    "sites": [
+      {
+        "key": "tvbox_source_46908afa4b",
+        "name": "📔厂长┃不卡",
+        "type": 3,
+        "api": "czzy_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "siteUrls": [
+            "https://www.czzy89.com/",
+            "https://www.czzymovie.com/"
+          ]
+        }
+      },
+      {
+        "key": "tvbox_source_c0590fb5d0",
+        "name": "🏝奥特┃多线",
+        "type": 3,
+        "api": "auete_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "host": "https://www.aeete.com"
+        }
+      },
+      {
+        "key": "tvbox_dm84_15c206da45",
+        "name": "🚌巴士┃动漫",
+        "type": 3,
+        "api": "dm84_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "host": "https://dm84.net"
+        }
+      },
+      {
+        "key": "tvbox_aid_3ae0e623b0",
+        "name": "🚑急救┃教学",
+        "type": 3,
+        "api": "firstaid_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "host": "https://m.youlai.cn"
+        }
+      },
+      {
+        "key": "tvbox_mtv_678859cabc",
+        "name": "🎶明星┃MV",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/5af5fbe12a88b7c45aa1c21e6551826c.txt"
+        }
+      },
+      {
+        "key": "tvbox_bili_aa051a3b1e",
+        "name": "🅱哔哔合集┃弹幕",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/0075389dca9afadd4614e9713765ff17.txt"
+        }
+      },
+      {
+        "key": "tvbox_biliych_ed0232f530",
+        "name": "🅱哔哔演唱会┃弹幕",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/6496356286589c68f52c2f99c0c674c7.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_07c179dc9d",
+        "name": "📚少儿┃教育",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/89370c8ddf36b5e1beb4d71adb921bda.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_6d614b06cd",
+        "name": "📚小学┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/d7a21cf34ede56f5c686ecfba5fc7e3f.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_8d9106f3c0",
+        "name": "📚初中┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/8f55d520f8d70056695740ef151744a7.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_32a180b78c",
+        "name": "📚高中┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/c66a4b5356141c49fd45ec51568017b4.txt"
+        }
+      }
+    ]
+  }
+}

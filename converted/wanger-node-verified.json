@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-10-10T14:40:57.65Z",
+  "source": "http://oss4liview.moji.com/thd_file/2026/10/05/cb720cb2ff9c53d6fcdfbf56be687fc2.jpg",
+  "note": "Bili 6 项均已通过 home/category/detail/play/search 在线只读验证。",
+  "video": {
+    "sites": [
+      {
+        "key": "tvbox_bili_071a094159",
+        "name": "🅱哔哔┃合集🅱",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 1,
+        "ext": {
+          "json": "https://support-chat.rongcloud.cn/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYkE9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--47a8ff0e68559a89a9a75b37d09a2b0854dc5a8a/bili001.txt"
+        }
+      },
+      {
+        "key": "tvbox_biliych_4d5a8e350f",
+        "name": "🅱哔哔┃歌曲🅱",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 1,
+        "filterable": 1,
+        "ext": {
+          "json": "https://support-chat.rongcloud.cn/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYkU9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3083f43a14e6b59f4bfe248478a3a8765b34bfdd/bilisong.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_e0a130ebc9",
+        "name": "📚少儿┃教育📚",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/3C3AB7A_773_ertong_20250828171550247newMediaImage.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_b0b2a2fb2f",
+        "name": "📚小学┃课堂📚",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/4A3AA71_773_xiaoxue_20250828171535645newMediaImage.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_1930c33c25",
+        "name": "📚初中┃课堂📚",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/19B1839_773_chuzhong_20250828171521929newMediaImage.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_9a93516b32",
+        "name": "📚高中┃课堂📚",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/345A587_773_gaozhong_20250828171449997newMediaImage.txt"
+        }
+      }
+    ]
+  }
+}

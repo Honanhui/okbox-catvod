@@ -1,15 +1,347 @@
 {
   "video": {
     "sites": [
-      {"key":"czzy","name":"厂长┃影视","type":3,"api":"czzy_open.js","ext":{"siteUrls":["https://www.czzy89.com/","https://www.czzymovie.com/"]}},
-      {"key":"ganfan","name":"干饭┃影视","type":3,"api":"appget_open.js","ext":{"host":"https://www.douy32mf.top","key":"1234567887654321","version":"120"}},
-      {"key":"yiwan","name":"一碗┃影视","type":3,"api":"appget_open.js","ext":{"host":"https://app.95112475.xyz","key":"5a9w6x58dsq6z3a6","version":"120"}},
-      {"key":"shucai","name":"蔬菜┃影视","type":3,"api":"appget_open.js","ext":{"discoveryUrl":"https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt","key":"88689667dce61725","version":"120"}},
-      {"key":"dm84","name":"动漫┃巴士","type":3,"api":"dm84_open.js","ext":{"host":"https://dm84.net"}},
-      {"key":"firstaid","name":"急救┃教学","type":3,"api":"firstaid_open.js","ext":{"host":"https://m.youlai.cn"}},
-      {"key":"auete","name":"奥特┃影视","type":3,"api":"auete_open.js","ext":{"host":"https://www.aeete.com"}},
-      {"key":"apprj","name":"潮流┃影视","type":3,"api":"apprj_open.js","filterable":1,"ext":{"host":"http://v.rbotv.cn","signKey":"7gp0bnd2sr85ydii2j32pcypscoc4w6c7g5spl"}},
-      {"key":"appqi","name":"光盘┃影视","type":3,"api":"appget_open.js","ext":{"host":"http://103.217.190.91:5566","key":"hagYExMdMkeWfemK","protocol":"qiji"}}
+      {
+        "key": "czzy",
+        "name": "厂长┃影视",
+        "type": 3,
+        "api": "czzy_open.js",
+        "ext": {
+          "siteUrls": [
+            "https://www.czzy89.com/",
+            "https://www.czzymovie.com/"
+          ]
+        }
+      },
+      {
+        "key": "ganfan",
+        "name": "干饭┃影视",
+        "type": 3,
+        "api": "appget_open.js",
+        "ext": {
+          "host": "https://www.douy32mf.top",
+          "key": "1234567887654321",
+          "version": "120"
+        }
+      },
+      {
+        "key": "yiwan",
+        "name": "一碗┃影视",
+        "type": 3,
+        "api": "appget_open.js",
+        "ext": {
+          "host": "https://app.95112475.xyz",
+          "key": "5a9w6x58dsq6z3a6",
+          "version": "120"
+        }
+      },
+      {
+        "key": "shucai",
+        "name": "蔬菜┃影视",
+        "type": 3,
+        "api": "appget_open.js",
+        "ext": {
+          "discoveryUrl": "https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt",
+          "key": "88689667dce61725",
+          "version": "120"
+        }
+      },
+      {
+        "key": "dm84",
+        "name": "动漫┃巴士",
+        "type": 3,
+        "api": "dm84_open.js",
+        "ext": {
+          "host": "https://dm84.net"
+        }
+      },
+      {
+        "key": "firstaid",
+        "name": "急救┃教学",
+        "type": 3,
+        "api": "firstaid_open.js",
+        "ext": {
+          "host": "https://m.youlai.cn"
+        }
+      },
+      {
+        "key": "auete",
+        "name": "奥特┃影视",
+        "type": 3,
+        "api": "auete_open.js",
+        "ext": {
+          "host": "https://www.aeete.com"
+        }
+      },
+      {
+        "key": "apprj",
+        "name": "潮流┃影视",
+        "type": 3,
+        "api": "apprj_open.js",
+        "filterable": 1,
+        "ext": {
+          "host": "http://v.rbotv.cn",
+          "signKey": "7gp0bnd2sr85ydii2j32pcypscoc4w6c7g5spl"
+        }
+      },
+      {
+        "key": "appqi",
+        "name": "光盘┃影视",
+        "type": 3,
+        "api": "appget_open.js",
+        "ext": {
+          "host": "http://103.217.190.91:5566",
+          "key": "hagYExMdMkeWfemK",
+          "protocol": "qiji"
+        }
+      },
+      {
+        "key": "tvbox_mtv_678859cabc",
+        "name": "🎶明星┃MV",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/5af5fbe12a88b7c45aa1c21e6551826c.txt"
+        }
+      },
+      {
+        "key": "tvbox_bili_aa051a3b1e",
+        "name": "🅱哔哔合集┃弹幕",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/0075389dca9afadd4614e9713765ff17.txt"
+        }
+      },
+      {
+        "key": "tvbox_biliych_ed0232f530",
+        "name": "🅱哔哔演唱会┃弹幕",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/6496356286589c68f52c2f99c0c674c7.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_07c179dc9d",
+        "name": "📚少儿┃教育",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/89370c8ddf36b5e1beb4d71adb921bda.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_6d614b06cd",
+        "name": "📚小学┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/d7a21cf34ede56f5c686ecfba5fc7e3f.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_8d9106f3c0",
+        "name": "📚初中┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/8f55d520f8d70056695740ef151744a7.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_32a180b78c",
+        "name": "📚高中┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/c66a4b5356141c49fd45ec51568017b4.txt"
+        }
+      },
+      {
+        "key": "tvbox_csp_bili_14d3a48fa4",
+        "name": "🅱┃️哔哩┃合集",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/0075389dca9afadd4614e9713765ff17.txt"
+        }
+      },
+      {
+        "key": "tvbox_mtv_14dd12cc72",
+        "name": "🎧┃明星┃MV",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/2b4eb-8fb08a6b-f9f1-48d8-816a-1bc712a85fefnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__9c20d6a980",
+        "name": "📚┃少儿┃教育",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/1903b-eb0f1675-2437-4e72-bcf0-427b1626d79fnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__355817fabb",
+        "name": "📚┃小学┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/a1140-144855fe-3eaa-44f3-b689-6812c233de54null"
+        }
+      },
+      {
+        "key": "tvbox_csp__ff763c0d23",
+        "name": "📚┃初中┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/ba156-73e16cad-8257-4f33-b8c0-e051e72e546dnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__2e3613d24a",
+        "name": "📚┃高中┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/e44b3-4a82ab48-e014-49b2-bb66-ee5207e8f195null"
+        }
+      },
+      {
+        "key": "tvbox_bili_071a094159",
+        "name": "🅱哔哔┃合集🅱",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 1,
+        "ext": {
+          "json": "https://support-chat.rongcloud.cn/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYkE9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--47a8ff0e68559a89a9a75b37d09a2b0854dc5a8a/bili001.txt"
+        }
+      },
+      {
+        "key": "tvbox_biliych_4d5a8e350f",
+        "name": "🅱哔哔┃歌曲🅱",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 1,
+        "filterable": 1,
+        "ext": {
+          "json": "https://support-chat.rongcloud.cn/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYkU9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3083f43a14e6b59f4bfe248478a3a8765b34bfdd/bilisong.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_e0a130ebc9",
+        "name": "📚少儿┃教育📚",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/3C3AB7A_773_ertong_20250828171550247newMediaImage.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_b0b2a2fb2f",
+        "name": "📚小学┃课堂📚",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/4A3AA71_773_xiaoxue_20250828171535645newMediaImage.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_1930c33c25",
+        "name": "📚初中┃课堂📚",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/19B1839_773_chuzhong_20250828171521929newMediaImage.txt"
+        }
+      },
+      {
+        "key": "tvbox_source_9a93516b32",
+        "name": "📚高中┃课堂📚",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 0,
+        "quickSearch": 0,
+        "filterable": 0,
+        "ext": {
+          "json": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/345A587_773_gaozhong_20250828171449997newMediaImage.txt"
+        }
+      }
     ]
   }
 }

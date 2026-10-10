@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-10-10T14:40:57.58Z",
+  "note": "Bili 6 项已通过 home/category/detail/play/search 在线只读验证；干饭、一碗保留既有 home 验证记录。",
+  "video": {
+    "sites": [
+      {
+        "key": "tvbox_www_douy32mf_top_5aec240958",
+        "name": "🍚┃干饭┃APP",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "https://www.douy32mf.top",
+          "key": "1234567887654321",
+          "version": "120"
+        }
+      },
+      {
+        "key": "tvbox_app_95112475_xyz_f4ec32bc6f",
+        "name": "🥣┃一碗┃APP",
+        "type": 3,
+        "api": "appget_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "ext": {
+          "host": "https://app.95112475.xyz",
+          "key": "5a9w6x58dsq6z3a6",
+          "version": "120"
+        }
+      },
+      {
+        "key": "tvbox_csp_bili_14d3a48fa4",
+        "name": "🅱┃️哔哩┃合集",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://nos.netease.com/ysf/0075389dca9afadd4614e9713765ff17.txt"
+        }
+      },
+      {
+        "key": "tvbox_mtv_14dd12cc72",
+        "name": "🎧┃明星┃MV",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/2b4eb-8fb08a6b-f9f1-48d8-816a-1bc712a85fefnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__9c20d6a980",
+        "name": "📚┃少儿┃教育",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/1903b-eb0f1675-2437-4e72-bcf0-427b1626d79fnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__355817fabb",
+        "name": "📚┃小学┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/a1140-144855fe-3eaa-44f3-b689-6812c233de54null"
+        }
+      },
+      {
+        "key": "tvbox_csp__ff763c0d23",
+        "name": "📚┃初中┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/ba156-73e16cad-8257-4f33-b8c0-e051e72e546dnull"
+        }
+      },
+      {
+        "key": "tvbox_csp__2e3613d24a",
+        "name": "📚┃高中┃课堂",
+        "type": 3,
+        "api": "bili_open.js",
+        "enable": true,
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 0,
+        "ext": {
+          "json": "https://img2.gelonghui.com/library/e44b3-4a82ab48-e014-49b2-bb66-ee5207e8f195null"
+        }
+      }
+    ]
+  }
+}

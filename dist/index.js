@@ -1,4 +1,4 @@
-/* OKBOX CatVodOpen 0.1 | Node.js 22+ */
+/* OKBOX CatVodOpen 0.2 | Node.js 22+ */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -3998,7 +3998,7 @@ var require_dbcs_data = __commonJS({
 var require_encodings = __commonJS({
   "node_modules/iconv-lite/encodings/index.js"(exports2, module2) {
     "use strict";
-    var modules = [
+    var modules2 = [
       require_internal(),
       require_utf32(),
       require_utf16(),
@@ -4009,8 +4009,8 @@ var require_encodings = __commonJS({
       require_dbcs_codec(),
       require_dbcs_data()
     ];
-    for (i = 0; i < modules.length; i++) {
-      module2 = modules[i];
+    for (i = 0; i < modules2.length; i++) {
+      module2 = modules2[i];
       for (enc in module2)
         if (Object.prototype.hasOwnProperty.call(module2, enc))
           exports2[enc] = module2[enc];
@@ -8360,11 +8360,11 @@ var require_util2 = __commonJS({
     var { isUint8Array } = require("node:util/types");
     var { webidl } = require_webidl();
     var supportedHashes = [];
-    var crypto2;
+    var crypto3;
     try {
-      crypto2 = require("node:crypto");
+      crypto3 = require("node:crypto");
       const possibleRelevantHashes = ["sha256", "sha384", "sha512"];
-      supportedHashes = crypto2.getHashes().filter((hash) => possibleRelevantHashes.includes(hash));
+      supportedHashes = crypto3.getHashes().filter((hash) => possibleRelevantHashes.includes(hash));
     } catch {
     }
     function responseURL(response) {
@@ -8637,7 +8637,7 @@ var require_util2 = __commonJS({
       }
     }
     function bytesMatch(bytes, metadataList) {
-      if (crypto2 === void 0) {
+      if (crypto3 === void 0) {
         return true;
       }
       const parsedMetadata = parseMetadata(metadataList);
@@ -8652,7 +8652,7 @@ var require_util2 = __commonJS({
       for (const item of metadata) {
         const algorithm = item.algo;
         const expectedValue = item.hash;
-        let actualValue = crypto2.createHash(algorithm).update(bytes).digest("base64");
+        let actualValue = crypto3.createHash(algorithm).update(bytes).digest("base64");
         if (actualValue[actualValue.length - 1] === "=") {
           if (actualValue[actualValue.length - 2] === "=") {
             actualValue = actualValue.slice(0, -2);
@@ -9304,7 +9304,7 @@ var require_formdata = __commonJS({
     var { File: NativeFile } = require("node:buffer");
     var nodeUtil = require("node:util");
     var File = globalThis.File ?? NativeFile;
-    var FormData = class _FormData {
+    var FormData2 = class _FormData {
       constructor(form) {
         webidl.util.markAsUncloneable(this);
         if (form !== void 0) {
@@ -9406,8 +9406,8 @@ var require_formdata = __commonJS({
         return `FormData ${output.slice(output.indexOf("]") + 2)}`;
       }
     };
-    iteratorMixin("FormData", FormData, kState, "name", "value");
-    Object.defineProperties(FormData.prototype, {
+    iteratorMixin("FormData", FormData2, kState, "name", "value");
+    Object.defineProperties(FormData2.prototype, {
       append: kEnumerableProperty,
       delete: kEnumerableProperty,
       get: kEnumerableProperty,
@@ -9435,7 +9435,7 @@ var require_formdata = __commonJS({
       }
       return { name, value };
     }
-    module2.exports = { FormData, makeEntry };
+    module2.exports = { FormData: FormData2, makeEntry };
   }
 });
 
@@ -9705,7 +9705,7 @@ var require_body = __commonJS({
       extractMimeType,
       utf8DecodeBytes
     } = require_util2();
-    var { FormData } = require_formdata();
+    var { FormData: FormData2 } = require_formdata();
     var { kState } = require_symbols2();
     var { webidl } = require_webidl();
     var { Blob: Blob2 } = require("node:buffer");
@@ -9716,8 +9716,8 @@ var require_body = __commonJS({
     var { multipartFormDataParser } = require_formdata_parser();
     var random;
     try {
-      const crypto2 = require("node:crypto");
-      random = (max) => crypto2.randomInt(0, max);
+      const crypto3 = require("node:crypto");
+      random = (max) => crypto3.randomInt(0, max);
     } catch {
       random = (max) => Math.floor(Math.random(max));
     }
@@ -9925,13 +9925,13 @@ Content-Type: ${value.type || "application/octet-stream"}\r
                   if (parsed === "failure") {
                     throw new TypeError("Failed to parse body as FormData.");
                   }
-                  const fd = new FormData();
+                  const fd = new FormData2();
                   fd[kState] = parsed;
                   return fd;
                 }
                 case "application/x-www-form-urlencoded": {
                   const entries = new URLSearchParams(value.toString());
-                  const fd = new FormData();
+                  const fd = new FormData2();
                   for (const [name, value2] of entries) {
                     fd.append(name, value2);
                   }
@@ -16666,7 +16666,7 @@ var require_response = __commonJS({
     } = require_constants3();
     var { kState, kHeaders } = require_symbols2();
     var { webidl } = require_webidl();
-    var { FormData } = require_formdata();
+    var { FormData: FormData2 } = require_formdata();
     var { URLSerializer } = require_data_url();
     var { kConstruct } = require_symbols();
     var assert = require("node:assert");
@@ -16979,7 +16979,7 @@ var require_response = __commonJS({
       ReadableStream
     );
     webidl.converters.FormData = webidl.interfaceConverter(
-      FormData
+      FormData2
     );
     webidl.converters.URLSearchParams = webidl.interfaceConverter(
       URLSearchParams
@@ -21357,13 +21357,13 @@ var require_frame = __commonJS({
     "use strict";
     var { maxUnsigned16Bit } = require_constants5();
     var BUFFER_SIZE = 16386;
-    var crypto2;
+    var crypto3;
     var buffer = null;
     var bufIdx = BUFFER_SIZE;
     try {
-      crypto2 = require("node:crypto");
+      crypto3 = require("node:crypto");
     } catch {
-      crypto2 = {
+      crypto3 = {
         // not full compatibility, but minimum.
         randomFillSync: function randomFillSync(buffer2, _offset, _size) {
           for (let i = 0; i < buffer2.length; ++i) {
@@ -21376,7 +21376,7 @@ var require_frame = __commonJS({
     function generateMask() {
       if (bufIdx === BUFFER_SIZE) {
         bufIdx = 0;
-        crypto2.randomFillSync(buffer ??= Buffer.allocUnsafe(BUFFER_SIZE), 0, BUFFER_SIZE);
+        crypto3.randomFillSync(buffer ??= Buffer.allocUnsafe(BUFFER_SIZE), 0, BUFFER_SIZE);
       }
       return [buffer[bufIdx++], buffer[bufIdx++], buffer[bufIdx++], buffer[bufIdx++]];
     }
@@ -21448,9 +21448,9 @@ var require_connection = __commonJS({
     var { Headers, getHeadersList } = require_headers();
     var { getDecodeSplit } = require_util2();
     var { WebsocketFrameSend } = require_frame();
-    var crypto2;
+    var crypto3;
     try {
-      crypto2 = require("node:crypto");
+      crypto3 = require("node:crypto");
     } catch {
     }
     function establishWebSocketConnection(url, protocols, client, ws, onEstablish, options) {
@@ -21470,7 +21470,7 @@ var require_connection = __commonJS({
         const headersList = getHeadersList(new Headers(options.headers));
         request.headersList = headersList;
       }
-      const keyValue = crypto2.randomBytes(16).toString("base64");
+      const keyValue = crypto3.randomBytes(16).toString("base64");
       request.headersList.append("sec-websocket-key", keyValue);
       request.headersList.append("sec-websocket-version", "13");
       for (const protocol of protocols) {
@@ -21500,7 +21500,7 @@ var require_connection = __commonJS({
             return;
           }
           const secWSAccept = response.headersList.get("Sec-WebSocket-Accept");
-          const digest = crypto2.createHash("sha1").update(keyValue + uid).digest("base64");
+          const digest = crypto3.createHash("sha1").update(keyValue + uid).digest("base64");
           if (secWSAccept !== digest) {
             failWebsocketConnection(ws, "Incorrect hash received in Sec-WebSocket-Accept header.");
             return;
@@ -23694,11 +23694,347 @@ var import_node_http = __toESM(require("node:http"), 1);
 var config_open_default = {
   video: {
     sites: [
-      { key: "czzy", name: "\u5382\u957F\u2503\u5F71\u89C6", type: 3, api: "czzy_open.js", ext: { siteUrls: ["https://www.czzy89.com/", "https://www.czzymovie.com/"] } },
-      { key: "ganfan", name: "\u5E72\u996D\u2503\u5F71\u89C6", type: 3, api: "appget_open.js", ext: { host: "https://www.douy32mf.top", key: "1234567887654321", version: "120" } },
-      { key: "yiwan", name: "\u4E00\u7897\u2503\u5F71\u89C6", type: 3, api: "appget_open.js", ext: { host: "https://app.95112475.xyz", key: "5a9w6x58dsq6z3a6", version: "120" } },
-      { key: "shucai", name: "\u852C\u83DC\u2503\u5F71\u89C6", type: 3, api: "appget_open.js", ext: { discoveryUrl: "https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt", key: "88689667dce61725", version: "120" } },
-      { key: "dm84", name: "\u52A8\u6F2B\u2503\u5DF4\u58EB", type: 3, api: "dm84_open.js", ext: { host: "https://dm84.net" } }
+      {
+        key: "czzy",
+        name: "\u5382\u957F\u2503\u5F71\u89C6",
+        type: 3,
+        api: "czzy_open.js",
+        ext: {
+          siteUrls: [
+            "https://www.czzy89.com/",
+            "https://www.czzymovie.com/"
+          ]
+        }
+      },
+      {
+        key: "ganfan",
+        name: "\u5E72\u996D\u2503\u5F71\u89C6",
+        type: 3,
+        api: "appget_open.js",
+        ext: {
+          host: "https://www.douy32mf.top",
+          key: "1234567887654321",
+          version: "120"
+        }
+      },
+      {
+        key: "yiwan",
+        name: "\u4E00\u7897\u2503\u5F71\u89C6",
+        type: 3,
+        api: "appget_open.js",
+        ext: {
+          host: "https://app.95112475.xyz",
+          key: "5a9w6x58dsq6z3a6",
+          version: "120"
+        }
+      },
+      {
+        key: "shucai",
+        name: "\u852C\u83DC\u2503\u5F71\u89C6",
+        type: 3,
+        api: "appget_open.js",
+        ext: {
+          discoveryUrl: "https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt",
+          key: "88689667dce61725",
+          version: "120"
+        }
+      },
+      {
+        key: "dm84",
+        name: "\u52A8\u6F2B\u2503\u5DF4\u58EB",
+        type: 3,
+        api: "dm84_open.js",
+        ext: {
+          host: "https://dm84.net"
+        }
+      },
+      {
+        key: "firstaid",
+        name: "\u6025\u6551\u2503\u6559\u5B66",
+        type: 3,
+        api: "firstaid_open.js",
+        ext: {
+          host: "https://m.youlai.cn"
+        }
+      },
+      {
+        key: "auete",
+        name: "\u5965\u7279\u2503\u5F71\u89C6",
+        type: 3,
+        api: "auete_open.js",
+        ext: {
+          host: "https://www.aeete.com"
+        }
+      },
+      {
+        key: "apprj",
+        name: "\u6F6E\u6D41\u2503\u5F71\u89C6",
+        type: 3,
+        api: "apprj_open.js",
+        filterable: 1,
+        ext: {
+          host: "http://v.rbotv.cn",
+          signKey: "7gp0bnd2sr85ydii2j32pcypscoc4w6c7g5spl"
+        }
+      },
+      {
+        key: "appqi",
+        name: "\u5149\u76D8\u2503\u5F71\u89C6",
+        type: 3,
+        api: "appget_open.js",
+        ext: {
+          host: "http://103.217.190.91:5566",
+          key: "hagYExMdMkeWfemK",
+          protocol: "qiji"
+        }
+      },
+      {
+        key: "tvbox_mtv_678859cabc",
+        name: "\u{1F3B6}\u660E\u661F\u2503MV",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://nos.netease.com/ysf/5af5fbe12a88b7c45aa1c21e6551826c.txt"
+        }
+      },
+      {
+        key: "tvbox_bili_aa051a3b1e",
+        name: "\u{1F171}\u54D4\u54D4\u5408\u96C6\u2503\u5F39\u5E55",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 1,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://nos.netease.com/ysf/0075389dca9afadd4614e9713765ff17.txt"
+        }
+      },
+      {
+        key: "tvbox_biliych_ed0232f530",
+        name: "\u{1F171}\u54D4\u54D4\u6F14\u5531\u4F1A\u2503\u5F39\u5E55",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://nos.netease.com/ysf/6496356286589c68f52c2f99c0c674c7.txt"
+        }
+      },
+      {
+        key: "tvbox_source_07c179dc9d",
+        name: "\u{1F4DA}\u5C11\u513F\u2503\u6559\u80B2",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://nos.netease.com/ysf/89370c8ddf36b5e1beb4d71adb921bda.txt"
+        }
+      },
+      {
+        key: "tvbox_source_6d614b06cd",
+        name: "\u{1F4DA}\u5C0F\u5B66\u2503\u8BFE\u5802",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://nos.netease.com/ysf/d7a21cf34ede56f5c686ecfba5fc7e3f.txt"
+        }
+      },
+      {
+        key: "tvbox_source_8d9106f3c0",
+        name: "\u{1F4DA}\u521D\u4E2D\u2503\u8BFE\u5802",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://nos.netease.com/ysf/8f55d520f8d70056695740ef151744a7.txt"
+        }
+      },
+      {
+        key: "tvbox_source_32a180b78c",
+        name: "\u{1F4DA}\u9AD8\u4E2D\u2503\u8BFE\u5802",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://nos.netease.com/ysf/c66a4b5356141c49fd45ec51568017b4.txt"
+        }
+      },
+      {
+        key: "tvbox_csp_bili_14d3a48fa4",
+        name: "\u{1F171}\u2503\uFE0F\u54D4\u54E9\u2503\u5408\u96C6",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 1,
+        quickSearch: 1,
+        filterable: 0,
+        ext: {
+          json: "https://nos.netease.com/ysf/0075389dca9afadd4614e9713765ff17.txt"
+        }
+      },
+      {
+        key: "tvbox_mtv_14dd12cc72",
+        name: "\u{1F3A7}\u2503\u660E\u661F\u2503MV",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 1,
+        quickSearch: 1,
+        filterable: 0,
+        ext: {
+          json: "https://img2.gelonghui.com/library/2b4eb-8fb08a6b-f9f1-48d8-816a-1bc712a85fefnull"
+        }
+      },
+      {
+        key: "tvbox_csp__9c20d6a980",
+        name: "\u{1F4DA}\u2503\u5C11\u513F\u2503\u6559\u80B2",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 1,
+        quickSearch: 1,
+        filterable: 0,
+        ext: {
+          json: "https://img2.gelonghui.com/library/1903b-eb0f1675-2437-4e72-bcf0-427b1626d79fnull"
+        }
+      },
+      {
+        key: "tvbox_csp__355817fabb",
+        name: "\u{1F4DA}\u2503\u5C0F\u5B66\u2503\u8BFE\u5802",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 1,
+        quickSearch: 1,
+        filterable: 0,
+        ext: {
+          json: "https://img2.gelonghui.com/library/a1140-144855fe-3eaa-44f3-b689-6812c233de54null"
+        }
+      },
+      {
+        key: "tvbox_csp__ff763c0d23",
+        name: "\u{1F4DA}\u2503\u521D\u4E2D\u2503\u8BFE\u5802",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 1,
+        quickSearch: 1,
+        filterable: 0,
+        ext: {
+          json: "https://img2.gelonghui.com/library/ba156-73e16cad-8257-4f33-b8c0-e051e72e546dnull"
+        }
+      },
+      {
+        key: "tvbox_csp__2e3613d24a",
+        name: "\u{1F4DA}\u2503\u9AD8\u4E2D\u2503\u8BFE\u5802",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 1,
+        quickSearch: 1,
+        filterable: 0,
+        ext: {
+          json: "https://img2.gelonghui.com/library/e44b3-4a82ab48-e014-49b2-bb66-ee5207e8f195null"
+        }
+      },
+      {
+        key: "tvbox_bili_071a094159",
+        name: "\u{1F171}\u54D4\u54D4\u2503\u5408\u96C6\u{1F171}",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 1,
+        quickSearch: 1,
+        filterable: 1,
+        ext: {
+          json: "https://support-chat.rongcloud.cn/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYkE9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--47a8ff0e68559a89a9a75b37d09a2b0854dc5a8a/bili001.txt"
+        }
+      },
+      {
+        key: "tvbox_biliych_4d5a8e350f",
+        name: "\u{1F171}\u54D4\u54D4\u2503\u6B4C\u66F2\u{1F171}",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 1,
+        filterable: 1,
+        ext: {
+          json: "https://support-chat.rongcloud.cn/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYkU9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3083f43a14e6b59f4bfe248478a3a8765b34bfdd/bilisong.txt"
+        }
+      },
+      {
+        key: "tvbox_source_e0a130ebc9",
+        name: "\u{1F4DA}\u5C11\u513F\u2503\u6559\u80B2\u{1F4DA}",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/3C3AB7A_773_ertong_20250828171550247newMediaImage.txt"
+        }
+      },
+      {
+        key: "tvbox_source_b0b2a2fb2f",
+        name: "\u{1F4DA}\u5C0F\u5B66\u2503\u8BFE\u5802\u{1F4DA}",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/4A3AA71_773_xiaoxue_20250828171535645newMediaImage.txt"
+        }
+      },
+      {
+        key: "tvbox_source_1930c33c25",
+        name: "\u{1F4DA}\u521D\u4E2D\u2503\u8BFE\u5802\u{1F4DA}",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/19B1839_773_chuzhong_20250828171521929newMediaImage.txt"
+        }
+      },
+      {
+        key: "tvbox_source_9a93516b32",
+        name: "\u{1F4DA}\u9AD8\u4E2D\u2503\u8BFE\u5802\u{1F4DA}",
+        type: 3,
+        api: "bili_open.js",
+        enable: true,
+        searchable: 0,
+        quickSearch: 0,
+        filterable: 0,
+        ext: {
+          json: "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/345A587_773_gaozhong_20250828171449997newMediaImage.txt"
+        }
+      }
     ]
   }
 };
@@ -24175,11 +24511,11 @@ var DomHandler = class {
     this.lastNode = null;
   }
   oncdatastart() {
-    const text3 = new Text2("");
-    const node = new CDATA2([text3]);
+    const text4 = new Text2("");
+    const node = new CDATA2([text4]);
     this.addNode(node);
-    text3.parent = node;
-    this.lastNode = text3;
+    text4.parent = node;
+    this.lastNode = text4;
   }
   oncdataend() {
     this.lastNode = null;
@@ -26384,13 +26720,13 @@ function getChildFunc(next2, adapter2) {
   };
 }
 var filters = {
-  contains(next2, text3, { adapter: adapter2 }) {
+  contains(next2, text4, { adapter: adapter2 }) {
     return function contains2(elem) {
-      return next2(elem) && adapter2.getText(elem).includes(text3);
+      return next2(elem) && adapter2.getText(elem).includes(text4);
     };
   },
-  icontains(next2, text3, { adapter: adapter2 }) {
-    const itext = text3.toLowerCase();
+  icontains(next2, text4, { adapter: adapter2 }) {
+    const itext = text4.toLowerCase();
     return function icontains(elem) {
       return next2(elem) && adapter2.getText(elem).toLowerCase().includes(itext);
     };
@@ -32521,22 +32857,22 @@ var defaultTreeAdapter = {
       node.parentNode = null;
     }
   },
-  insertText(parentNode, text3) {
+  insertText(parentNode, text4) {
     if (parentNode.childNodes.length > 0) {
       const prevNode = parentNode.childNodes[parentNode.childNodes.length - 1];
       if (defaultTreeAdapter.isTextNode(prevNode)) {
-        prevNode.value += text3;
+        prevNode.value += text4;
         return;
       }
     }
-    defaultTreeAdapter.appendChild(parentNode, defaultTreeAdapter.createTextNode(text3));
+    defaultTreeAdapter.appendChild(parentNode, defaultTreeAdapter.createTextNode(text4));
   },
-  insertTextBefore(parentNode, text3, referenceNode) {
+  insertTextBefore(parentNode, text4, referenceNode) {
     const prevNode = parentNode.childNodes[parentNode.childNodes.indexOf(referenceNode) - 1];
     if (prevNode && defaultTreeAdapter.isTextNode(prevNode)) {
-      prevNode.value += text3;
+      prevNode.value += text4;
     } else {
-      defaultTreeAdapter.insertBefore(parentNode, defaultTreeAdapter.createTextNode(text3), referenceNode);
+      defaultTreeAdapter.insertBefore(parentNode, defaultTreeAdapter.createTextNode(text4), referenceNode);
     }
   },
   adoptAttributes(recipient, attrs) {
@@ -36235,20 +36571,20 @@ var adapter = {
       node.parent = null;
     }
   },
-  insertText(parentNode, text3) {
+  insertText(parentNode, text4) {
     const lastChild = parentNode.children[parentNode.children.length - 1];
     if (lastChild && isText(lastChild)) {
-      lastChild.data += text3;
+      lastChild.data += text4;
     } else {
-      adapter.appendChild(parentNode, adapter.createTextNode(text3));
+      adapter.appendChild(parentNode, adapter.createTextNode(text4));
     }
   },
-  insertTextBefore(parentNode, text3, referenceNode) {
+  insertTextBefore(parentNode, text4, referenceNode) {
     const prevNode = parentNode.children[parentNode.children.indexOf(referenceNode) - 1];
     if (prevNode && isText(prevNode)) {
-      prevNode.data += text3;
+      prevNode.data += text4;
     } else {
-      adapter.insertBefore(parentNode, adapter.createTextNode(text3), referenceNode);
+      adapter.insertBefore(parentNode, adapter.createTextNode(text4), referenceNode);
     }
   },
   adoptAttributes(recipient, attrs) {
@@ -37738,10 +38074,10 @@ function __jsEvalReturn() {
     $2('a[href*="/movie/"]').each((_, element) => {
       const link = $2(element), href = link.attr("href") || "", id = href.match(/\/movie\/([^/?]+)\.html/)?.[1];
       if (!id || records.has(id)) return;
-      const image = link.find("img").first();
-      const title = link.attr("title") || image.attr("alt") || link.closest("li").find("h3").text().trim();
+      const image2 = link.find("img").first();
+      const title = link.attr("title") || image2.attr("alt") || link.closest("li").find("h3").text().trim();
       if (!title) return;
-      const pic = image.attr("data-original") || image.attr("data-src") || image.attr("src") || "";
+      const pic = image2.attr("data-original") || image2.attr("data-src") || image2.attr("src") || "";
       records.set(id, { vod_id: id, vod_name: clean(title), vod_pic: pic ? httpUrl(pic, host) : "", vod_remarks: link.closest("li").find(".jidi,.hdinfo").first().text().trim() });
     });
     return [...records.values()];
@@ -37786,8 +38122,8 @@ function __jsEvalReturn() {
     if (!episodes.length) throw new Error("\u5382\u957F\u8BE6\u60C5\u6CA1\u6709\u96C6\u6570");
     return JSON.stringify({ list: [{ vod_id: id, vod_name: $2(".moviedteail_tt h1").text().trim(), vod_pic: $2(".dyimg img").attr("src") || "", vod_content: $2(".yp_context").text().trim(), vod_play_from: "\u5382\u957F", vod_play_url: episodes.join("#") }] });
   }
-  function reverseCloud(text3) {
-    const code = text3.match(/var\s+url\s*=\s*['"]([^'"]+)['"]/)?.[1];
+  function reverseCloud(text4) {
+    const code = text4.match(/var\s+url\s*=\s*['"]([^'"]+)['"]/)?.[1];
     if (!code) return "";
     const reversed = [...code].reverse().join("");
     if (!/^[a-f\d]+$/i.test(reversed)) return "";
@@ -37795,8 +38131,8 @@ function __jsEvalReturn() {
     if (!Number.isInteger(middle)) return "";
     return decoded.slice(0, middle) + decoded.slice(middle + 7);
   }
-  function direct(text3) {
-    return text3.match(/(?:\b(?:url|file)\s*[:=]|<(?:video|source)\b[^>]*\bsrc=)\s*['"](https?:[^'"\s]+\.(?:m3u8|mp4)[^'"\s]*)['"]/)?.[1]?.replaceAll("\\/", "/") || "";
+  function direct(text4) {
+    return text4.match(/(?:\b(?:url|file)\s*[:=]|<(?:video|source)\b[^>]*\bsrc=)\s*['"](https?:[^'"\s]+\.(?:m3u8|mp4)[^'"\s]*)['"]/)?.[1]?.replaceAll("\\/", "/") || "";
   }
   async function play(flag, id) {
     const episode = decodeEpisode(id);
@@ -37825,9 +38161,11 @@ function __jsEvalReturn() {
 // appget_open.js
 function __jsEvalReturn2() {
   const request = createRequest();
-  let host, key, version, token, discoveryUrl, resolvedAt = 0, discoveryTask;
+  let host, key, version, token, discoveryUrl, resolvedAt = 0, discoveryTask, protocol;
   async function init(cfg) {
     const ext = typeof cfg.ext === "string" ? JSON.parse(cfg.ext) : cfg.ext;
+    protocol = ext.protocol || "appget";
+    if (!["appget", "qiji"].includes(protocol)) throw Error("\u672A\u77E5 App \u534F\u8BAE");
     discoveryUrl = ext.discoveryUrl ? httpUrl(ext.discoveryUrl) : "";
     host = ext.host ? httpUrl(ext.host).replace(/\/$/, "") : "";
     if (!host && !discoveryUrl) throw new Error("\u8BF7\u914D\u7F6E AppGet \u5730\u5740");
@@ -37841,9 +38179,9 @@ function __jsEvalReturn2() {
     if (!discoveryUrl || host && Date.now() - resolvedAt < 15 * 6e4) return;
     if (!discoveryTask) discoveryTask = (async () => {
       const response = await request(discoveryUrl);
-      const text3 = response.content.trim();
-      if (!/^https?:\/\/\S+$/.test(text3)) throw new Error("AppGet \u5730\u5740\u53D1\u5E03\u9875\u683C\u5F0F\u5DF2\u6539\u53D8");
-      host = httpUrl(text3).replace(/\/$/, "");
+      const text4 = response.content.trim();
+      if (!/^https?:\/\/\S+$/.test(text4)) throw new Error("AppGet \u5730\u5740\u53D1\u5E03\u9875\u683C\u5F0F\u5DF2\u6539\u53D8");
+      host = httpUrl(text4).replace(/\/$/, "");
       resolvedAt = Date.now();
     })().finally(() => {
       discoveryTask = null;
@@ -37858,7 +38196,7 @@ function __jsEvalReturn2() {
       headers["app-api-verify-sign"] = aesEncrypt(timestamp, key);
       headers["content-type"] = "application/x-www-form-urlencoded";
     }
-    const response = await request(host + "/api.php/getappapi.index/" + path, { method: "POST", headers, body: signed ? body : JSON.stringify(body) });
+    const response = await request(host + "/api.php/" + (protocol === "qiji" ? "qijiappapi" : "getappapi") + ".index/" + path, { method: "POST", headers, body: signed ? body : JSON.stringify(body) });
     let root2;
     try {
       root2 = JSON.parse(response.content);
@@ -37882,7 +38220,7 @@ function __jsEvalReturn2() {
     return { page: Number(page), pagecount: list.length ? Number(page) + 1 : Number(page), limit: list.length, total: list.length, list };
   }
   async function home() {
-    const data2 = await api("initV119");
+    const data2 = await api(protocol === "qiji" ? "initV120" : "initV119");
     const classes = (data2.type_list || []).filter((x) => Number(x.type_id) > 0);
     let list = videos(data2.recommend_list || []);
     if (!list.length && classes.length) list = JSON.parse(await category(classes[0].type_id)).list;
@@ -38018,27 +38356,466 @@ function __jsEvalReturn3() {
   return { init, home, category, search, detail, play };
 }
 
-// index.js
-var factories = { "czzy_open.js": __jsEvalReturn, "appget_open.js": __jsEvalReturn2, "dm84_open.js": __jsEvalReturn3 };
-async function createApp() {
-  const instances = /* @__PURE__ */ new Map();
-  for (const site of config_open_default.video.sites) {
-    if (!/^[a-zA-Z0-9_-]+$/.test(site.key) || !factories[site.api]) throw new Error("\u8BA2\u9605\u6A21\u5757\u914D\u7F6E\u65E0\u6548");
-    const spider = factories[site.api]();
-    await spider.init({ skey: site.key, stype: site.type, ext: site.ext });
-    instances.set(site.key, spider);
+// firstaid_open.js
+var categoryNames = ["\u6025\u6551\u6280\u80FD", "\u5BB6\u5EAD\u751F\u6D3B", "\u6025\u5371\u91CD\u75C7", "\u5E38\u89C1\u635F\u4F24", "\u52A8\u7269\u81F4\u4F24", "\u6D77\u6D0B\u6025\u6551", "\u4E2D\u6BD2\u6025\u6551", "\u610F\u5916\u4E8B\u6545"];
+function __jsEvalReturn4() {
+  const request = createRequest();
+  let host, cache, pending;
+  async function init(cfg) {
+    host = new URL(httpUrl(cfg.ext.host)).origin;
   }
-  const catalogue = { video: { sites: config_open_default.video.sites.map(({ ext, api, ...site }) => ({ ...site, searchable: 1, filterable: 1, api: "/spider/" + site.key + "/3" })) } };
+  async function catalogue() {
+    if (cache && Date.now() - cache.at < 15 * 6e4) return cache;
+    if (!pending) pending = (async () => {
+      const response = await request(host + "/jijiu/");
+      const $2 = load(response.content), groups = [];
+      $2(".jj-title-li").each((index2, element) => {
+        const banner = $2(element).prev().find("img").attr("src");
+        const rows = [];
+        $2(element).find("a[href]").each((_, link) => {
+          const a = $2(link), path = a.attr("href");
+          if (!/^\/jijiu\/article\/[\w-]+\.html$/.test(path)) return;
+          rows.push({ vod_id: path, vod_name: clean(a.text()), vod_pic: banner ? httpUrl(banner, host) : "", vod_remarks: "\u6025\u6551\u6559\u5B66" });
+        });
+        groups.push(rows);
+      });
+      if (!groups.some((x) => x.length)) throw Error("\u6025\u6551\u6559\u5B66\u680F\u76EE\u7ED3\u6784\u5DF2\u66F4\u65B0");
+      cache = { at: Date.now(), groups };
+      return cache;
+    })().finally(() => {
+      pending = null;
+    });
+    return pending;
+  }
+  async function home() {
+    const { groups } = await catalogue();
+    return JSON.stringify({ class: groups.map((_, i) => ({ type_id: String(i), type_name: categoryNames[i] || "\u680F\u76EE" + (i + 1) })), list: groups.flat().slice(0, 24) });
+  }
+  async function category(id, pg = 1) {
+    const { groups } = await catalogue();
+    if (!/^\d+$/.test(id) || !groups[Number(id)]) throw Error("\u65E0\u6548\u6025\u6551\u680F\u76EE");
+    pg = Math.max(1, Number(pg) || 1);
+    const all = groups[Number(id)], limit = 24;
+    return JSON.stringify({ page: pg, pagecount: Math.max(1, Math.ceil(all.length / limit)), total: all.length, limit, list: all.slice((pg - 1) * limit, pg * limit) });
+  }
+  async function search(wd, quick = false, pg = 1) {
+    const { groups } = await catalogue();
+    pg = Math.max(1, Number(pg) || 1);
+    const rows = groups.flat().filter((x) => x.vod_name.includes(String(wd).trim()));
+    return JSON.stringify({ page: pg, pagecount: Math.max(1, Math.ceil(rows.length / 24)), total: rows.length, list: rows.slice((pg - 1) * 24, pg * 24) });
+  }
+  async function media(path) {
+    if (!/^\/jijiu\/article\/[\w-]+\.html$/.test(path)) throw Error("\u65E0\u6548\u6025\u6551\u89C6\u9891\u6807\u8BC6");
+    const response = await request(host + path), $2 = load(response.content), src = $2("#video source").attr("src") || $2("#video").attr("src");
+    if (!src) throw Error("\u8BE5\u6559\u5B66\u9875\u9762\u6CA1\u6709\u89C6\u9891");
+    return { url: httpUrl(src, response.url), pic: $2("#video").attr("poster") || "", title: $2("title").text().trim(), referer: response.url };
+  }
+  async function detail(id) {
+    const value = await media(id);
+    return JSON.stringify({ list: [{ vod_id: id, vod_name: value.title, vod_pic: value.pic, vod_play_from: "\u6709\u6765\u533B\u751F", vod_play_url: "\u64AD\u653E$" + encodeEpisode({ path: id }) }] });
+  }
+  async function play(flag, id) {
+    const value = await media(decodeEpisode(id).path);
+    return JSON.stringify({ parse: 0, url: value.url, header: { "User-Agent": UA, Referer: value.referer } });
+  }
+  return { init, home, category, search, detail, play };
+}
+
+// auete_open.js
+var families = ["Movie", "Tv", "Zy", "Dm", "qita"];
+function __jsEvalReturn5() {
+  const request = createRequest();
+  let host, searchUrl, searchField;
+  async function init(cfg) {
+    host = new URL(httpUrl(cfg.ext.host)).origin;
+  }
+  async function page(path) {
+    const target = httpUrl(path, host);
+    if (new URL(target).origin !== host) throw Error("\u5965\u7279\u9875\u9762\u6807\u8BC6\u65E0\u6548");
+    const response = await request(target);
+    return { $: load(response.content), html: response.content, url: response.url };
+  }
+  function list($2) {
+    const rows = /* @__PURE__ */ new Map();
+    $2("a[href]").each((_, el) => {
+      const a = $2(el), path = a.attr("href");
+      if (!/^\/(Movie|Tv|Zy|Dm|qita)\/[^?#]+\/$/.test(path) || rows.has(path)) return;
+      const img = a.find("img").first();
+      if (!img.length) return;
+      const name = img.attr("alt") || a.attr("title") || a.text();
+      if (!name?.trim()) return;
+      const pic = img.attr("data-original") || img.attr("data-src") || img.attr("src") || "";
+      rows.set(path, { vod_id: path, vod_name: clean(name), vod_pic: pic ? httpUrl(pic, host) : "", vod_remarks: a.find(".badge,.pic-text").first().text().trim() });
+    });
+    return [...rows.values()];
+  }
+  async function home() {
+    const { $: $2 } = await page("/");
+    const classes = [];
+    $2(".mr-auto a[href]").each((_, el) => {
+      const a = $2(el), id = a.attr("href").match(/^\/(Movie|Tv|Zy|Dm|qita)\/index\.html$/)?.[1];
+      if (id) classes.push({ type_id: id, type_name: a.text().trim() });
+    });
+    if (!classes.length) throw Error("\u5965\u7279\u7F51\u7AD9\u5BFC\u822A\u7ED3\u6784\u5DF2\u66F4\u65B0");
+    return JSON.stringify({ class: classes, list: list($2) });
+  }
+  async function category(id, pg = 1) {
+    if (!families.includes(id)) throw Error("\u65E0\u6548\u5965\u7279\u5206\u7C7B");
+    pg = Math.max(1, Number(pg) || 1);
+    const { $: $2 } = await page("/" + id + "/index" + (pg === 1 ? "" : pg) + ".html");
+    return JSON.stringify({ page: pg, pagecount: $2("a").toArray().some((e) => /下一|»/.test($2(e).text())) ? pg + 1 : pg, list: list($2) });
+  }
+  async function search(wd, quick = false, pg = 1) {
+    if (!searchUrl) {
+      const { $: $3 } = await page("/");
+      const form = $3("form[action]").toArray().find((e) => $3(e).find('input[name="searchword"],input[name="wd"]').length);
+      if (!form) throw Error("\u5965\u7279\u641C\u7D22\u8868\u5355\u5DF2\u66F4\u65B0");
+      searchUrl = new URL($3(form).attr("action"), host);
+      if (searchUrl.origin !== host) throw Error("\u5965\u7279\u641C\u7D22\u5730\u5740\u5F02\u5E38");
+      searchField = $3(form).find('input[name="searchword"],input[name="wd"]').first().attr("name");
+    }
+    const target = new URL(searchUrl);
+    target.searchParams.set(searchField, wd);
+    target.searchParams.set("page", String(Math.max(1, Number(pg) || 1)));
+    const { $: $2 } = await page(target.href);
+    if ($2('input[name*="validate"],input[name*="checkcode"],img[src*="captcha"]').length || /验证码|加法验证/.test($2("title").text())) throw Error("\u5965\u7279\u641C\u7D22\u9700\u8981\u6E90\u7AD9\u9A8C\u8BC1");
+    return JSON.stringify({ page: Number(pg), list: list($2) });
+  }
+  async function detail(id) {
+    if (!/^\/(Movie|Tv|Zy|Dm|qita)\/[^?#]+\/$/.test(id)) throw Error("\u65E0\u6548\u5965\u7279\u5F71\u7247\u6807\u8BC6");
+    const { $: $2 } = await page(id), names = [], groups = [];
+    $2('[id="player_list"]').each((i, el) => {
+      const block = $2(el), episodes = [];
+      block.find('a[href*="/play-"]').each((_, link) => {
+        const a = $2(link);
+        episodes.push(clean(a.text()) + "$" + encodeEpisode({ path: a.attr("href") }));
+      });
+      if (episodes.length) {
+        names.push(clean(block.find(".card-header b").text() || "\u7EBF\u8DEF" + (i + 1)));
+        groups.push(episodes.join("#"));
+      }
+    });
+    if (!groups.length) throw Error("\u5965\u7279\u8BE6\u60C5\u6CA1\u6709\u96C6\u6570");
+    const img = $2("img").toArray().find((e) => /upload/.test($2(e).attr("src") || ""));
+    return JSON.stringify({ list: [{ vod_id: id, vod_name: $2("#video").attr("data-pname") || $2("h1").first().text() || $2("title").text(), vod_pic: img ? httpUrl($2(img).attr("src"), host) : "", vod_play_from: names.join("$$$"), vod_play_url: groups.join("$$$") }] });
+  }
+  async function play(flag, id) {
+    const { path } = decodeEpisode(id);
+    if (!/^\/(Movie|Tv|Zy|Dm|qita)\/[^?#]+\/play-\d+-\d+\.html$/.test(path)) throw Error("\u65E0\u6548\u5965\u7279\u96C6\u6570");
+    const { html: html3, url } = await page(path), encoded = html3.match(/\bvar\s+now\s*=\s*base64decode\(["']([A-Za-z0-9+/=]*)["']\)/)?.[1];
+    if (!encoded) throw Error("\u5965\u7279\u64AD\u653E\u5668\u683C\u5F0F\u5DF2\u66F4\u65B0");
+    const media = httpUrl(Buffer.from(encoded, "base64").toString("utf8"));
+    if (!/\.(m3u8|mp4)(?:[?#]|$)/i.test(media)) throw Error("\u8BE5\u5965\u7279\u7EBF\u8DEF\u9700\u8981\u989D\u5916\u89E3\u6790\uFF0C\u5C1A\u672A\u9002\u914D");
+    return JSON.stringify({ parse: 0, url: media, header: { "User-Agent": UA, Referer: url } });
+  }
+  return { init, home, category, search, detail, play };
+}
+
+// apprj_open.js
+var import_node_crypto3 = __toESM(require("node:crypto"), 1);
+function __jsEvalReturn6() {
+  const request = createRequest();
+  let host, secret;
+  async function init(cfg) {
+    host = httpUrl(cfg.ext.host).replace(/\/$/, "");
+    secret = cfg.ext.signKey;
+    if (!secret) throw Error("AppRJ \u7F3A\u5C11\u516C\u5F00\u534F\u8BAE\u7B7E\u540D\u53C2\u6570");
+  }
+  function signature() {
+    const timestamp = String(Math.floor(Date.now() / 1e3));
+    return { timestamp, sign: import_node_crypto3.default.createHash("md5").update(secret + timestamp).digest("hex") };
+  }
+  async function api(path, fields = {}) {
+    const form = new FormData();
+    for (const [k, v] of Object.entries({ ...fields, ...signature() })) form.set(k, String(v));
+    const response = await request(host + path, { method: "POST", headers: { "user-agent": "okhttp-okgo/jeasonlzy" }, body: form });
+    const root2 = JSON.parse(response.content);
+    if (root2.code !== 1 || !root2.data) throw Error("AppRJ \u63A5\u53E3\u672A\u8FD4\u56DE\u6709\u6548\u6570\u636E");
+    return root2.data;
+  }
+  function videos(rows = []) {
+    return rows.map((v) => ({ vod_id: String(v.vod_id), vod_name: clean(v.vod_name), vod_pic: v.vod_pic_thumb || v.vod_pic || "", vod_remarks: v.vod_remarks || "" }));
+  }
+  async function home() {
+    const data2 = await api("/v3/type/top_type");
+    const classes = (data2.list || []).map((x) => ({ type_id: String(x.type_id), type_name: x.type_name }));
+    if (!classes.length) throw Error("AppRJ \u6CA1\u6709\u5206\u7C7B");
+    const filters2 = {};
+    for (const c of data2.list) {
+      filters2[c.type_id] = ["extend", "area", "year", "lang"].filter((k) => Array.isArray(c[k]) && c[k].length > 1).map((k) => ({ key: k === "extend" ? "class" : k, name: { extend: "\u7C7B\u578B", area: "\u5730\u533A", year: "\u5E74\u4EFD", lang: "\u8BED\u8A00" }[k], value: c[k].map((v) => ({ n: v, v: v === "\u5168\u90E8" ? "" : v })) }));
+    }
+    const rows = JSON.parse(await category(classes[0].type_id));
+    return JSON.stringify({ class: classes, filters: filters2, list: rows.list });
+  }
+  async function category(id, page = 1, filter4 = false, extend = {}) {
+    page = Math.max(1, Number(page) || 1);
+    const fields = { type_id: id, page, limit: 12 };
+    for (const k of ["class", "area", "year", "lang"]) if (extend[k]) fields[k] = extend[k];
+    const data2 = await api("/v3/home/type_search", fields);
+    return JSON.stringify({ page, pagecount: (data2.list || []).length ? page + 1 : page, list: videos(data2.list) });
+  }
+  async function search(wd, quick = false, page = 1) {
+    const data2 = await api("/v3/home/search", { keyword: wd, page, limit: 12 });
+    return JSON.stringify({ page: Number(page), list: videos(data2.list) });
+  }
+  async function detail(id) {
+    const v = await api("/v3/home/vod_details", { vod_id: id }), names = [], groups = [];
+    for (const line of v.vod_play_list || []) {
+      const episodes = (line.urls || []).map((e) => clean(e.name) + "$" + encodeEpisode({ url: e.url, parsers: line.parse_urls || [], ua: line.ua || UA, referer: line.referer || "" }));
+      if (!episodes.length) continue;
+      names.push(clean(line.name || line.title || line.flag || "\u7EBF\u8DEF"));
+      groups.push(episodes.join("#"));
+    }
+    if (!groups.length) throw Error("AppRJ \u8BE6\u60C5\u6CA1\u6709\u96C6\u6570");
+    return JSON.stringify({ list: [{ ...videos([v])[0], vod_content: v.vod_content || "", vod_actor: v.vod_actor || "", vod_director: v.vod_director || "", vod_play_from: names.join("$$$"), vod_play_url: groups.join("$$$") }] });
+  }
+  async function play(flag, id) {
+    const e = decodeEpisode(id);
+    let media, ua = e.ua || UA;
+    const errors = [];
+    if (e.parsers.length) {
+      for (const p of e.parsers.slice(0, 3)) {
+        try {
+          const endpoint = new URL(httpUrl(p + encodeURIComponent(e.url)));
+          for (const [k, v] of Object.entries(signature())) endpoint.searchParams.set(k, v);
+          const response = await request(endpoint.href);
+          const root2 = JSON.parse(response.content);
+          media = root2.url || root2.data?.url;
+          ua = root2.UA || ua;
+          if (media) break;
+        } catch (error) {
+          errors.push(error.message);
+        }
+      }
+    } else if (/^https?:/.test(e.url)) media = e.url;
+    if (!media) throw Error("AppRJ \u64AD\u653E\u89E3\u6790\u5931\u8D25" + (errors.length ? "\uFF1A" + errors[0] : ""));
+    return JSON.stringify({ parse: 0, url: httpUrl(media), header: { "User-Agent": ua, ...e.referer ? { Referer: e.referer } : {} } });
+  }
+  return { init, home, category, search, detail, play };
+}
+
+// bili_open.js
+var DEFAULT_CLASSES = [
+  { type_id: "\u7535\u5F71", type_name: "\u7535\u5F71" },
+  { type_id: "\u7535\u89C6\u5267", type_name: "\u7535\u89C6\u5267" },
+  { type_id: "\u52A8\u753B", type_name: "\u52A8\u753B" },
+  { type_id: "\u7EAA\u5F55\u7247", type_name: "\u7EAA\u5F55\u7247" },
+  { type_id: "\u97F3\u4E50", type_name: "\u97F3\u4E50" }
+];
+function text3(value) {
+  return clean(String(value ?? "").replace(/<[^>]*>/g, ""));
+}
+function image(value) {
+  const source = String(value ?? "");
+  return source.startsWith("//") ? "https:" + source : source;
+}
+function video(item = {}) {
+  return {
+    vod_id: item.bvid || item.aid || item.id || "",
+    vod_name: text3(item.title || item.name),
+    vod_pic: image(item.pic || item.cover),
+    vod_remarks: text3(item.duration || item.pubdate || item.author || item.owner?.name || "")
+  };
+}
+function __jsEvalReturn7() {
+  const request = createRequest();
+  let apiBase = "https://api.bilibili.com", catalogue = { class: DEFAULT_CLASSES, filters: {} }, cookie = "";
+  const browserUA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36";
+  function endpoint(path, params = {}) {
+    const target = new URL(path, httpUrl(apiBase));
+    for (const [key, value] of Object.entries(params)) if (value !== void 0 && value !== null && value !== "") target.searchParams.set(key, String(value));
+    return target.href;
+  }
+  async function api(path, params) {
+    const headers = { "User-Agent": browserUA, referer: "https://www.bilibili.com/" };
+    if (cookie) headers.cookie = cookie;
+    const response = await request(endpoint(path, params), { headers });
+    let parsed;
+    try {
+      parsed = JSON.parse(response.content);
+    } catch {
+      throw new Error("Bilibili \u63A5\u53E3\u6CA1\u6709\u8FD4\u56DE JSON");
+    }
+    if (parsed.code && parsed.code !== 0) throw new Error("Bilibili \u63A5\u53E3\u9519\u8BEF " + parsed.code + (parsed.message ? ": " + parsed.message : ""));
+    return parsed.data ?? parsed.result ?? parsed;
+  }
+  async function init(cfg) {
+    const ext = cfg.ext || {};
+    apiBase = httpUrl(typeof ext === "string" ? "https://api.bilibili.com" : ext.apiBase || "https://api.bilibili.com");
+    cookie = typeof ext === "object" ? String(ext.cookie || "") : "";
+    if (!cookie && new URL(apiBase).hostname === "api.bilibili.com") {
+      const response2 = await request("https://www.bilibili.com/", { headers: { "User-Agent": browserUA } });
+      cookie = response2.headers.getSetCookie().map((value) => value.split(";", 1)[0]).join("; ");
+    }
+    const configUrl = typeof ext === "object" ? ext.json || ext.catalogueUrl : "";
+    if (!configUrl) return;
+    const response = await request(httpUrl(configUrl), { headers: { referer: "https://www.bilibili.com/" } });
+    let data2;
+    try {
+      data2 = JSON.parse(response.content);
+    } catch {
+      throw new Error("Bili \u5206\u7C7B\u914D\u7F6E\u4E0D\u662F JSON");
+    }
+    if (!Array.isArray(data2.class)) throw new Error("Bili \u5206\u7C7B\u914D\u7F6E\u7F3A\u5C11 class");
+    catalogue = { class: data2.class.map((item) => ({ type_id: String(item.type_id), type_name: text3(item.type_name) })), filters: data2.filters || {} };
+  }
+  function listOf(data2) {
+    return (data2?.result || data2?.item || data2?.list || []).map(video).filter((item) => item.vod_id && item.vod_name);
+  }
+  async function home() {
+    const data2 = await api("/x/web-interface/index/top/rcmd", { ps: 14, fresh_idx: 1, fresh_idx_1h: 1 });
+    return JSON.stringify({ class: catalogue.class, filters: catalogue.filters, list: listOf(data2) });
+  }
+  async function homeVod() {
+    const data2 = await api("/x/web-interface/index/top/rcmd", { ps: 14, fresh_idx: 1, fresh_idx_1h: 1 });
+    return JSON.stringify({ list: listOf(data2) });
+  }
+  async function query(keyword, pg = 1, extend = {}) {
+    if (!String(keyword).trim()) throw new Error("\u641C\u7D22\u8BCD\u4E0D\u80FD\u4E3A\u7A7A");
+    const data2 = await api("/x/web-interface/search/type", {
+      search_type: "video",
+      keyword,
+      page: Math.max(1, Number(pg) || 1),
+      page_size: 20,
+      order: extend.order || "totalrank",
+      duration: extend.duration || 0
+    });
+    const videos = listOf(data2), page = Math.max(1, Number(pg) || 1), pages = Number(data2?.numPages || data2?.num_pages || 0);
+    return { page, pagecount: pages || page, limit: 20, total: Number(data2?.numResults || data2?.num_results || videos.length), list: videos };
+  }
+  async function category(tid, pg = 1, filter4 = false, extend = {}) {
+    const selected = extend?.tid || tid;
+    return JSON.stringify(await query(selected, pg, extend || {}));
+  }
+  async function search(wd, quick = false, pg = 1) {
+    return JSON.stringify(await query(wd, pg, {}));
+  }
+  async function detail(id) {
+    if (!/^(BV[\w]+|av\d+|\d+)$/i.test(String(id))) throw new Error("\u65E0\u6548\u7684 Bilibili \u89C6\u9891\u6807\u8BC6");
+    const data2 = await api("/x/web-interface/view", String(id).toLowerCase().startsWith("bv") ? { bvid: id } : { aid: String(id).replace(/^av/i, "") });
+    const pages = Array.isArray(data2.pages) && data2.pages.length ? data2.pages : [{ cid: data2.cid, page: 1, part: data2.title }];
+    const aid = data2.aid || String(id).replace(/^av/i, "");
+    const episodes = pages.filter((page) => page.cid).map((page, index2) => clean(page.part || "\u7B2C" + (page.page || index2 + 1) + "\u96C6") + "$" + encodeEpisode({ aid, cid: page.cid, bvid: data2.bvid || id }));
+    if (!episodes.length) throw new Error("Bilibili \u8BE6\u60C5\u6CA1\u6709\u53EF\u64AD\u653E\u5206\u96C6");
+    return JSON.stringify({ list: [{ vod_id: data2.bvid || String(id), vod_name: text3(data2.title), vod_pic: image(data2.pic), vod_content: text3(data2.desc), vod_remarks: text3(data2.tname), vod_play_from: "Bilibili", vod_play_url: episodes.join("#") }] });
+  }
+  async function play(flag, id) {
+    const episode = decodeEpisode(id);
+    if (!/^[\w-]+$/.test(String(episode.aid)) || !/^[\w-]+$/.test(String(episode.cid))) throw new Error("\u65E0\u6548\u7684 Bilibili \u5206\u96C6\u6807\u8BC6");
+    const data2 = await api("/x/player/playurl", { avid: episode.aid, cid: episode.cid, qn: 80, fnval: 0, fourk: 1 });
+    const url = data2?.durl?.[0]?.url || data2?.dash?.video?.[0]?.baseUrl || data2?.dash?.video?.[0]?.base_url;
+    if (!url) throw new Error("Bilibili \u6CA1\u6709\u8FD4\u56DE\u53EF\u64AD\u653E\u5730\u5740");
+    return JSON.stringify({ parse: 0, url: httpUrl(url), header: { Referer: "https://www.bilibili.com/", "User-Agent": "Mozilla/5.0" } });
+  }
+  return { init, home, homeVod, category, search, detail, play };
+}
+
+// maccms_open.js
+function itemOf(vod = {}) {
+  return { vod_id: String(vod.vod_id ?? vod.id ?? ""), vod_name: clean(vod.vod_name ?? vod.name), vod_pic: String(vod.vod_pic ?? vod.pic ?? ""), vod_remarks: clean(vod.vod_remarks ?? vod.vod_class ?? vod.vod_year ?? "") };
+}
+function __jsEvalReturn8() {
+  const request = createRequest();
+  let host = "";
+  function endpoint(params = {}) {
+    const target = new URL("/api.php/provide/vod/", host);
+    for (const [key, value] of Object.entries(params)) if (value !== void 0 && value !== null && value !== "") target.searchParams.set(key, String(value));
+    return target.href;
+  }
+  async function api(params) {
+    const response = await request(endpoint(params));
+    let json;
+    try {
+      json = JSON.parse(response.content);
+    } catch {
+      throw new Error("\u91C7\u96C6\u63A5\u53E3\u6CA1\u6709\u8FD4\u56DE JSON");
+    }
+    if (Number(json.code) === 0) throw new Error("\u91C7\u96C6\u63A5\u53E3\u9519\u8BEF\uFF1A" + (json.msg || "\u672A\u77E5\u9519\u8BEF"));
+    return json;
+  }
+  async function init(cfg) {
+    const ext = cfg.ext || {};
+    host = httpUrl(typeof ext === "string" ? ext : ext.host);
+  }
+  async function home() {
+    const data2 = await api({ ac: "list", pg: 1 });
+    const classes = (data2.class || []).map((item) => ({ type_id: String(item.type_id), type_name: clean(item.type_name) }));
+    return JSON.stringify({ class: classes, list: (data2.list || []).map(itemOf) });
+  }
+  async function homeVod() {
+    const data2 = await api({ ac: "list", pg: 1 });
+    return JSON.stringify({ list: (data2.list || []).map(itemOf) });
+  }
+  async function category(tid, pg = 1) {
+    if (!/^\d+$/.test(String(tid))) throw new Error("\u65E0\u6548\u5206\u7C7B\u6807\u8BC6");
+    const page = Math.max(1, Number(pg) || 1), data2 = await api({ ac: "list", t: tid, pg: page });
+    return JSON.stringify({ page, pagecount: Number(data2.pagecount || page), limit: Number(data2.limit || data2.list?.length || 0), total: Number(data2.total || data2.list?.length || 0), list: (data2.list || []).map(itemOf) });
+  }
+  async function search(wd, quick = false, pg = 1) {
+    if (!String(wd).trim()) throw new Error("\u641C\u7D22\u8BCD\u4E0D\u80FD\u4E3A\u7A7A");
+    const page = Math.max(1, Number(pg) || 1), data2 = await api({ ac: "list", wd, pg: page });
+    return JSON.stringify({ page, pagecount: Number(data2.pagecount || page), limit: Number(data2.limit || data2.list?.length || 0), total: Number(data2.total || data2.list?.length || 0), list: (data2.list || []).map(itemOf) });
+  }
+  async function detail(id) {
+    if (!/^\d+$/.test(String(id))) throw new Error("\u65E0\u6548\u89C6\u9891\u6807\u8BC6");
+    const data2 = await api({ ac: "detail", ids: id });
+    const vod = data2.list?.[0];
+    if (!vod) throw new Error("\u91C7\u96C6\u63A5\u53E3\u6CA1\u6709\u8FD4\u56DE\u89C6\u9891\u8BE6\u60C5");
+    const from = String(vod.vod_play_from || "\u5728\u7EBF\u64AD\u653E").split("$$$");
+    const groups = String(vod.vod_play_url || "").split("$$$");
+    const urls = groups.map((group, index2) => group.split("#").filter(Boolean).map((part, episode) => {
+      const [name, ...rest] = part.split("$");
+      return clean(name || String(episode + 1)) + "$" + encodeEpisode({ url: rest.join("$") });
+    }).join("#"));
+    if (!urls.some(Boolean)) throw new Error("\u89C6\u9891\u8BE6\u60C5\u6CA1\u6709\u64AD\u653E\u5730\u5740");
+    return JSON.stringify({ list: [{ ...itemOf(vod), vod_content: clean(vod.vod_content), vod_play_from: from.join("$$$"), vod_play_url: urls.join("$$$") }] });
+  }
+  async function play(flag, id) {
+    const episode = decodeEpisode(id), url = httpUrl(episode.url);
+    return JSON.stringify({ parse: 0, url, header: { Referer: host } });
+  }
+  return { init, home, homeVod, category, search, detail, play };
+}
+
+// spiders/registry.js
+var modules = { "czzy_open.js": __jsEvalReturn, "appget_open.js": __jsEvalReturn2, "dm84_open.js": __jsEvalReturn3, "firstaid_open.js": __jsEvalReturn4, "auete_open.js": __jsEvalReturn5, "apprj_open.js": __jsEvalReturn6, "bili_open.js": __jsEvalReturn7, "maccms_open.js": __jsEvalReturn8 };
+function createRegistry(config, factories = modules) {
+  const instances = /* @__PURE__ */ new Map(), sites = [];
+  for (const site of config.video.sites) {
+    if (site.enable === false) continue;
+    if (!/^[a-zA-Z0-9_-]+$/.test(site.key) || !factories[site.api] || site.type !== 3) throw Error("\u8BA2\u9605\u6A21\u5757\u914D\u7F6E\u65E0\u6548");
+    if (instances.has(site.key)) throw Error("\u7AD9\u70B9 key \u91CD\u590D\uFF1A" + site.key);
+    const spider = factories[site.api]();
+    let ready;
+    const initialize = () => ready || (ready = Promise.resolve().then(() => spider.init({ skey: site.key, stype: site.type, ext: site.ext })).catch((error) => {
+      ready = null;
+      throw error;
+    }));
+    const proxy = {};
+    for (const action of ["home", "homeVod", "category", "search", "detail", "play"]) if (typeof spider[action] === "function") proxy[action] = async (...args) => {
+      await initialize();
+      return spider[action](...args);
+    };
+    instances.set(site.key, proxy);
+    const { ext, api, ...metadata } = site;
+    sites.push({ ...metadata, enable: true, searchable: site.searchable ?? 1, quickSearch: site.quickSearch ?? 1, filterable: site.filterable ?? 0, api: "/spider/" + site.key + "/3" });
+  }
+  return { instances, catalogue: { video: { sites } } };
+}
+
+// index.js
+async function createApp(options = {}) {
+  const { instances, catalogue } = createRegistry(options.config || config_open_default);
   const server = import_node_http.default.createServer(async (req, res) => {
     res.setHeader("content-type", "application/json; charset=utf-8");
     res.setHeader("cache-control", "no-store");
     try {
       const path = new URL(req.url, "http://localhost").pathname;
       if (path === "/health" || path === "/check") {
-        res.end(JSON.stringify({ ok: true, version: "0.1", sites: instances.size }));
+        res.end(JSON.stringify({ ok: true, run: true, version: "0.2", sites: instances.size }));
         return;
       }
-      if (path === "/config") {
+      if (path === "/config" || path === "/full-config") {
         res.end(JSON.stringify(catalogue));
         return;
       }

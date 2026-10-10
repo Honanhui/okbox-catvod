@@ -1,5 +1,9 @@
 # 验证记录
 
+## 0.2：三份 TVBox 订阅的 Bili 协议迁移
+
+2026-10-10，以公开 Bilibili API 和各订阅自带的分类 JSON 重写 `csp_Bili` / `csp_BiliGuard`，不执行远端 JAR、DEX 或网页脚本。每项均实际调用 `home/category/search/detail/play`：饭太硬 7 项、肥猫 6 项、王二小 6 项，共 19 项。验证的站点清单与配置片段位于 `converted/*-node-verified.json`；其余 Guard/JAR/P2P 项保持未映射状态。
+
 日期：2026-10-08。测试是当时上游的抽样结果，不代表全部影片、线路永久可用。
 
 | 站点 | 本机真实请求 | Linux Docker 真实请求 |
